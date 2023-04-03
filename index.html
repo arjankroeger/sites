@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es7"></script>
+    <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Gebrochen rationale Funktionen</h1>
+						<h2>1. Einleitung</h2>
+						<ul>
+							<li>Definition: Eine gebrochen rationale Funktion ist ein Bruch aus einem Polynom im Zähler und einem Polynom im Nenner.</li>
+							<li>Warum sind sie wichtig?</li>
+							<ul>
+								<li>Gebrochen rationale Funktionen treten in vielen Anwendungen auf, wie z.B. in der Physik, der Ingenieurwissenschaft und der Finanzmathematik.</li>
+								<li>Sie sind ein wichtiger Teil der Analysis und helfen uns, das Verhalten von Funktionen zu verstehen.</li>
+							</ul>
+						</ul>
+				</section>
+				<section>
+					<h2>2. Nullstellen</h2>
+					<ul>
+						<li>Definition: Eine Nullstelle ist ein Wert von x, für den der Funktionswert y gleich Null ist.</li>
+						<li>Wie kann man sie berechnen?</li>
+						<ul>
+							<li>Für eine gebrochen rationale Funktion kann man die Nullstellen durch Lösen der Gleichung im Nenner bestimmen.</li>
+							<li>Einfaches Beispiel: \(y = \frac{x+2}{x-1}\) hat eine Nullstelle bei x = -2.</li>
+							<li>Schwieriges Beispiel: \(y = \frac{x^2 + 5x + 6}{x^2 - 3x + 2}\) hat Nullstellen bei x = -2 und x = -3.</li>
+						</ul>
+					</ul>
+				</section>
+				<section>
+					<h2>3. Definitionslücken</h2>
+					<ul>
+						<li>Definition: Eine Definitionslücke tritt auf, wenn der Funktionswert nicht definiert ist, obwohl der Nenner nicht gleich Null ist.</li>
+						<li>Wie kann man sie erkennen?</li>
+						<ul>
+							<li>Definitionslücken können durch Faktorisieren des Nenners erkannt werden.</li>
+							<li>Einfaches Beispiel: \(y = \frac{1}{x-2}\) hat eine Definitionslücke bei x = 2.</li>
+							<li>Schwieriges Beispiel: \(y = \frac{x^2 - 4}{x^2 - 5x + 6}\) hat eine Definitionslücke bei x = 2 und x = 3.</li>
+						</ul>
+					</ul>
+				</section>
+				<section>
+					<h2>4. Asymptoten</h2>
+					<ul>
+						<li>Senkrechte Asymptoten</li>
+						<li>Wagrechte Asymptoten</li>
+						<li>Schräge Asypmtoten</li>
+						<li>Ganzrationale Asymptoten</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Senkrechte Asymptoten:</h2>
+						<ul>
+							<li>Treten auf, wenn der Nenner Null wird und der Zähler nicht gleich Null ist.</li>
+							<li>Die Gleichung der senkrechten Asymptote ist x = a, wobei a der Wert ist, für den der Nenner Null wird.</li>
+							<li>Einfaches Beispiel: \(y = \frac{1}{x}\) hat eine senkrechte Asymptote bei x = 0.</li>
+							<li>Schwieriges Beispiel: \(y = \frac{x^2 + 1}{x-2}\) hat eine senkrechte Asymptote bei x = 2.</li>
+						</ul>
+				</section>
+				<section>
+					<h2>Verhalten im Unendlichen:</g2>
+						<p>Es gibt drei Fälle zu unterscheiden:</p>
+						<ul>
+							<li>Der Grad des Zählers (z) kleiner Grad des Nenners (n) => waagerechte Asymptote bei y = 0.</li>
+							<li>z = n. => waagerechte Asymptote bei y = a/b, wobei a der Leitkoeffizient des Zählers und b der Leitkoeffizient des Nenners ist.</li>
+							<li>z > n => ein unbeschränktes Wachstum oder ein unbeschränktes Fallen, je nach Vorzeichen des Leitkoeffizienten des Zählers.</li>
+						</ul>
+				</section>
+				<section>
+					<h1>Wagrechte Asymptote bei y = 0</h1>
+					<h2>Einfaches Beispiel</h2>
+					<p>\(y = \frac{x}{x^2+1}\)</p>
+					<ul>
+						<li>Grad des Zählers: 1</li>
+						<li>Grad des Nenners: 2</li>
+						<li>Die Funktion hat eine wagrechte Asymptote bei y = 0.</li>
+					</ul>
+					<h2>Schwieriges Beispiel</h2>
+					<p>\(y = \frac{2x^2-3x+1}{x^3-3x^2+2x}\)</p>
+					<ul>
+						<li>Grad des Zählers: 2</li>
+						<li>Grad des Nenners: 3</li>
+						<li>Die Funktion hat eine wagrechte Asymptote bei y = 0.</li>
+					</ul>			
+				</section>
+				<section>
+					<h1>Wagrechte Asymptote bei y ungleich 0</h1>
+					<h2>Einfaches Beispiel</h2>
+					<p>\(y = \frac{x^2}{x^2+1}\)</p>
+					<ul>
+						<li>Grad des Zählers: 2</li>
+						<li>Grad des Nenners: 2</li>
+						<li>Die Funktion hat eine wagrechte Asymptote bei y = 1.</li>
+					</ul>
+					<h2>Schwieriges Beispiel</h2>
+					<p>\(y = \frac{4x^4-2x^3+3x^2+5x+1}{x^4+2x^3+3x^2+4x+5}\)</p>
+					<ul>
+						<li>Grad des Zählers: 4</li>
+						<li>Grad des Nenners: 4</li>
+						<li>Die Funktion hat eine wagrechte Asymptote bei y = 4/1.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Schräge Asymptoten:</h2>
+					<ul>
+						<li>Treten auf, wenn der Grad des Zählers genau um 1 größer ist als der Grad des Nenners.</li>
+						<li>Die Gleichung der schrägen Asymptote ist y = mx + b, wobei m der Steigungskoeffizient und b der y-Achsenabschnitt ist.</li>
+						<li>Einfaches Beispiel: \(y = \frac{x+1}{x}\) hat eine schräge Asymptote bei y = x + 1.</li>
+						<li>Schwieriges Beispiel: \(y = \frac{x^3 + 2x^2 + 1}{x^2 - x - 2}\) hat eine schräge Asymptote bei y = x + 2.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Ganzrationale Asymptoten:</h2>
+					<ul>
+						<li>Treten auf, wenn der Grad des Zählers um mindestens 2 größer ist als der Grad des Nenners.</li>
+						<li>Die Gleichung der ganzrationalen Asymptote ist eine Polynomfunktion.</li>
+						<li>Einfaches Beispiel: \(y = \frac{x^3 - 3x + 2}{x^2 - 4}\) hat eine ganzrationale Asymptote bei y = x.</li>
+						<li>Schwieriges Beispiel: \(y = \frac{x^4 - x^3 + 2x^2 + x + 1}{x^2 + x - 2}\) hat eine ganzrationale Asymptote bei y = x^2 - x + 1.</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Ableitungen</h1>
+					<h2>Sekantensteigung zur Tangentensteigung</h2>
+					<ul>
+						<li>Die Sekantensteigung ist die Steigung einer Geraden, die durch zwei Punkte auf einer Kurve verläuft.</li>
+						<li>Die Tangentensteigung ist die Steigung einer Geraden, die die Kurve in einem bestimmten Punkt berührt.</li>
+						<li>Die h-Methode wird verwendet, um die Tangentensteigung mithilfe der Sekantensteigung zu bestimmen.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Ableitungsregeln</h2>
+					<ul>
+						<li>Die Summenregel besagt, dass die Ableitung der Summe zweier Funktionen gleich der Summe der Ableitungen dieser Funktionen ist.</li>
+						<li>Die Produktregel besagt, dass die Ableitung des Produkts zweier Funktionen gleich dem Produkt der Ableitung der einen Funktion und der anderen Funktion plus dem Produkt der Funktionen und der Ableitungen ist.</li>
+						<li>Die Quotientenregel besagt, dass die Ableitung des Quotienten zweier Funktionen gleich dem Nenner mal der Ableitung des Zählers minus dem Zähler mal der Ableitung des Nenners, alles dividiert durch den Quadrat des Nenners, ist.</li>
+						<li>Die Kettenregel besagt, dass die Ableitung einer zusammengesetzten Funktion gleich dem Produkt der Ableitung der äußeren Funktion und der Ableitung der inneren Funktion ist.</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>\(f(x) = x^2 + 3x + 4 \)</li>
+						<li>\(f(x) = \sin(x) + \cos(x) \)</li>
+						<li>\(f(x) = x^2 \cdot \ln(x)\)</li>
+						<li>\(f(x) = e^x \cdot \cos(x) \)</li>
+						<li> \(f(x) = \frac{1}{x} \)</li>
+						<li>\(f(x) = \frac{x^2 + \sin(x)}{\cos(x)} \)</li>
+						<li>\(f(x) = e^{3x} \)</li>
+						<li> \(f(x) = \sin(2x^2 + 3x) \)</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>\(f(x) = x^2 + 3x + 4 \Rightarrow f'(x) = 2x + 3\)</li>
+						<li>\(f(x) = \sin(x) + \cos(x) \Rightarrow f'(x) = \cos(x) - \sin(x)\)</li>
+						<li>\(f(x) = x^2 \cdot \ln(x) \Rightarrow f'(x) = x\ln(x) + 2x\)</li>
+						<li>\(f(x) = e^x \cdot \cos(x) \Rightarrow f'(x) = e^x \cdot \cos(x) - e^x \cdot \sin(x)\)</li>
+						<li> \(f(x) = \frac{1}{x} \Rightarrow f'(x) = -\frac{1}{x^2}\)</li>
+						<li>\(f(x) = \frac{x^2 + \sin(x)}{\cos(x)} \Rightarrow f'(x) = -\frac{x^2\sin(x) + 2x\cos(x) + \sin(x)}{\cos^2(x)}\)</li>
+						<li>\(f(x) = e^{3x} \Rightarrow f'(x) = 3e^{3x}\)</li>
+						<li> \(f(x) = \sin(2x^2 + 3x) \Rightarrow f'(x) = (4x+3)\cos(2x^2+3x)\)</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>\(f(x) = e^{2x} \)</li>
+						<li>\(f(x) = e^{x^2+2x} \)</li>
+						<li>\(f(x) = \sin(x) \)</li>
+						<li>\(f(x) = \cos(2x)\)</li>
+						<li>\(f(x) = \ln(x) \)</li>
+						<li> \(f(x) = \ln(x^2+1) \)</li>
+						<li>\(f(x) = \sqrt{x} \)</li>
+						<li>\(f(x) = \sqrt{x^3+2x} \)</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>\(f(x) = e^{2x} \Rightarrow f'(x) = 2e^{2x}\)</li>
+						<li>\(f(x) = e^{x^2+2x} \Rightarrow f'(x) = (2x+2)e^{x^2+2x}\)</li>
+						<li>\(f(x) = \sin(x) \Rightarrow f'(x) = \cos(x)\)</li>
+						<li>\(f(x) = \cos(2x) \Rightarrow f'(x) = -2\sin(2x)\)</li>
+						<li>\(f(x) = \ln(x) \Rightarrow f'(x) = \frac{1}{x}\)</li>
+						<li> \(f(x) = \ln(x^2+1) \Rightarrow f'(x) = \frac{2x}{x^2+1}\)</li>
+						<li>\(f(x) = \sqrt{x} \Rightarrow f'(x) = \frac{1}{2\sqrt{x}}\)</li>
+						<li>\(f(x) = \sqrt{x^3+2x} \Rightarrow f'(x) = \frac{3x^2+2}{2\sqrt{x^3+2x}}\)</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
