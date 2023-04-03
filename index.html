@@ -200,6 +200,103 @@
 						<li>\(f(x) = \sqrt{x^3+2x} \Rightarrow f'(x) = \frac{3x^2+2}{2\sqrt{x^3+2x}}\)</li>
 					</ul>
 				</section>
+
+
+				<section>
+					<h2>Extrema und Terrassenpunkte</h2>
+<ul>
+<li>Definition von Extrema als lokale Maxima und Minima</li>
+<li>Berechnung von Extrema mit der Ableitung</li>
+<ul>
+<li>Notwendige Bedingung: Ableitung = 0</li>
+<li>Hinreichende Bedingungen: 2. Ableitung</li>
+</ul>
+<li>Beispiel: \(f(x) = x^3 - 3x^2 + 4\)</li>
+<ul>
+<li>Bestimmung der Ableitung: \(f'(x) = 3x^2 - 6x\)</li>
+<li>Lösen der Gleichung \(f'(x) = 0\): \(x = 0\) oder \(x = 2\)</li>
+<li>Bestimmung der 2. Ableitung: \(f''(x) = 6x - 6\)</li>
+<li>Überprüfung der Hinreichenden Bedingungen:</li>
+<ul>
+<li> \(f''(0) = -6 < 0 \Rightarrow\) lokales Maximum bei \(x=0\)</li>
+<li> \(f''(2) = 6 > 0 \Rightarrow\) lokales Minimum bei \(x=2\)</li>
+</ul>
+</ul>
+</section>
+
+<section>
+	<h2>Beispiel</h2>
+	<ul>
+		<li>1. Finde die Extremstellen der Funktion \(f(x) = x^2 - 4x + 3\)</li>
+		<li>2. Finde die Extremstellen der Funktion \(f(x) = 3x^3 - 12x^2\).</li>
+	</ul>
+</section>
+<section>
+	<ul>
+		<li>
+			<h3>1.Finde die Extremstellen der Funktion \(f(x) = x^2 - 4x + 3\).</h3>
+			<ul>
+				<li>\(f'(x) = 2x - 4\) </li>
+				<li>	Setze \(f'(x) = 0\):</li>
+				<li>\(2x - 4 = 0\)</li>
+				<li>\(x = 2\)</li>
+				<li>Die einzige Extremstelle ist bei \(x=2\). Es ist ein lokales Minimum, da \(f''(2) = 2 > 0\).</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+<section>
+	<ul>
+		<li>
+			<h3>1.Finde die Extremstellen der Funktion \(f(x) = 3x^3 - 12x^2\).</h3>
+			<ul>
+				<li>\(f'(x) = 9x^2 - 24x\) </li>
+				<li>	Setze \(f'(x) = 0\):</li>
+				<li>\(9x^2 - 24x = 0\)</li>
+				<li>\(3x(3x-8) = 0\)</li>
+				<li>\(x = 2\)oder \(x = \frac{8}{3}\)</li>
+				<li>Die Extremstellen sind bei \(x=0\) und \(x=\frac{8}{3}\). Es ist ein lokales Maximum bei \(x=0\), da \(f''(0) = 18 > 0\), und ein lokales Minimum bei \(x=\frac{8}{3}\), da \(f''(\frac{8}{3}) = 18 > 0\).</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+				<section>
+					<h2>Die Normale</h2>
+					<li>Die Normale auf einer Kurve steht senkrecht auf der Tangente an einem bestimmten Punkt.</li>
+  <li>Die Steigung der Normalen ist das negative Kehrwert der Steigung der Tangente an diesem Punkt.</li>
+  <li>Die Gleichung der Normalen an einem Punkt mit Koordinaten \((x_0, y_0)\) auf einer Kurve \(y=f(x)\) lautet:</li>
+  <ul>
+    <li>\(y-y_0 = -\frac{1}{f'(x_0)}(x-x_0)\)</li>
+  </ul>
+  <p>Beispiele</p>
+  <ul>
+	<li>Gegeben sei \(y=x^2\) und wir wollen die Normale an der Stelle \(x=1\) bestimmen.</li>
+	<li>Gegeben sei \(y=\frac{1}{x}\) und wir wollen die Normale an der Stelle \(x=2\) bestimmen.</li>
+  </ul>
+				</section>
+				<section>
+					<li>Beispiel für eine einfache Kurve:</li>
+			<ul>
+				<li>Gegeben sei \(y=x^2\) und wir wollen die Normale an der Stelle \(x=1\) bestimmen.</li>
+				<li>Die Ableitung von \(y=x^2\) ist \(y'=2x\).</li>
+				<li>Die Steigung der Tangente an der Stelle \(x=1\) ist also \(2 \cdot 1 = 2\).</li>
+				<li>Die Steigung der Normalen an der Stelle \(x=1\) ist also \(-\frac{1}{2}\).</li>
+				<li>Der Punkt auf der Kurve bei \(x=1\) ist \((1,1)\).</li>
+				<li>Die Gleichung der Normalen lautet also: \(y-1=-\frac{1}{2}(x-1)\) oder \(y=-\frac{1}{2}x+\frac{3}{2}\).</li>
+			</ul>
+
+				</section>
+				<section>
+					<li>Beispiel für eine schwierigere Kurve:</li>
+  <ul>
+    <li>Gegeben sei \(y=\frac{1}{x}\) und wir wollen die Normale an der Stelle \(x=2\) bestimmen.</li>
+    <li>Die Ableitung von \(y=\frac{1}{x}\) ist \(y'=-\frac{1}{x^2}\).</li>
+    <li>Die Steigung der Tangente an der Stelle \(x=2\) ist also \(-\frac{1}{2^2}=-\frac{1}{4}\).</li>
+    <li>Die Steigung der Normalen an der Stelle \(x=2\) ist also \(-\frac{1}{-\frac{1}{4}}=4\).</li>
+    <li>Der Punkt auf der Kurve bei \(x=2\) ist \((2,\frac{1}{2})\).</li>
+    <li>Die Gleichung der Normalen lautet also: \(y-\frac{1}{2}=4(x-2)\) oder \(y=4x-\frac{15}{2}\).</li>
+  </ul>
+				</section>
 			</div>
 		</div>
 
