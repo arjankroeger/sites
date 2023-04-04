@@ -5,21 +5,21 @@
  */
 @import url(./fonts/source-sans-pro/source-sans-pro.css);
 section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
-  color: #222;
+  color: #fff;
 }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: #191919;
+  --r-background-color: #fff;
   --r-main-font: Source Sans Pro, Helvetica, sans-serif;
   --r-main-font-size: 30px;
-  --r-main-color: #fff;
+  --r-main-color: #222;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
-  --r-heading-color: #fff;
+  --r-heading-color: #222;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: uppercase;
@@ -31,18 +31,22 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-heading3-size: 1.3em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #42affa;
-  --r-link-color-dark: #068de9;
-  --r-link-color-hover: #8dcffc;
-  --r-selection-background-color: rgba(66, 175, 250, 0.75);
-  --r-selection-color: #fff;
+  --r-link-color: #1576b6;
+  --r-link-color-dark: #077ece;
+  --r-link-color-hover: #1576b6;
+  --r-selection-background-color: rgba(38, 124, 182, 0.75);
+  --r-selection-color: #222;
 }
 
 .reveal-viewport {
-  background: #191919;
+  background: #fff;
   background-color: var(--r-background-color);
 }
 
+.LaTeX{
+  font-size: 25px;
+
+}
 .reveal {
   font-family: var(--r-main-font);
   font-size: var(--r-main-font-size);
@@ -190,8 +194,8 @@ section.has-light-background, section.has-light-background h1, section.has-light
   margin: var(--r-block-margin) auto;
   padding: 5px;
   font-style: italic;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  background: #ffffff0d;
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.2);
 }
 
 .reveal blockquote p:first-child,
@@ -213,7 +217,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-family: var(--r-code-font);
   line-height: 1.2em;
   word-wrap: break-word;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.15);
 }
 
 .reveal code {
@@ -311,7 +315,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 .reveal .roll span:after {
-  color: #fff;
+  color: #222;
   background: var(--r-link-color-dark);
 }
 
@@ -320,7 +324,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
  *********************************************/
 .reveal .r-frame {
   border: 4px solid var(--r-main-color);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
 }
 
 .reveal a .r-frame {
@@ -329,7 +333,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 
 .reveal a:hover .r-frame {
   border-color: var(--r-link-color);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.55);
 }
 
 /*********************************************
@@ -343,7 +347,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
   color: var(--r-link-color);
 }
 
