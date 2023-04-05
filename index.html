@@ -61,10 +61,11 @@
 						<ul> 
 							<li> \(log_e (a) = ln  \) </li>
 							<li> \(log_{10} (a) = lg  \) </li>
-							<li> \(log_b (a) = log(a), wenn~b~irrelevant~ist~oder~b=10  \) </li>
 						</ul>
 						<li> \( \mathbb{D}_{max} = \mathbb{R}^+ ; \mathbb{W} = \mathbb{R} \) </li>
 						<li> \[\lim_{x\to +\infty} log(a) = +\infty ; \lim_{x\to 0} log(a) = -\infty \] </li>
+						<li> \(\log_a(b) + \log_a(c) = \log_a(b\cdot c)  \) </li>
+						<li> \( \log_a(b^c) = c\cdot\log_a(b) \) </li>
 					</ul>
 				</section>
 
@@ -81,7 +82,11 @@
 						<li> \( \frac{a}{b} \pm \frac{c}{d} = \frac{ad}{bd} \pm \frac{cb}{db} = \frac{ad \pm cb}{db}\) </li>
 					</ul>
 				</section>
-
+				<section> 
+					<h2>Übung  </h2>
+					<p>Zeige, dass<br> \((\frac{\sqrt[4]{\{(a+3)^2-2(a+3)b-c(2c+c^{-1})+b^2\}^3}}{e^{n\cdot\ln{(p)}}})^{\frac{4}{3}}  \)= </p>
+					<p> \( \frac{((a+3)-b)^2-1}{p^n} -\frac{2c}{\sqrt[3]{p}^n} \) </p>
+				</section>
 				<section>
 					<h2> Trigonometrie </h2>
 					<img src="statics/Einheitskreis_Ani.gif" alt="GIF" width="40%">
@@ -221,6 +226,20 @@
 						<li>\(f(-x) = f(x) \Rightarrow \) Achsensymmetrisch zur y-Achse</li>
 						<li>\(f(-x) = -f(x) \Rightarrow\) Punktsymmetrisch zum Ursprung</li>
 						<li>\(f(-x) \neq f(x) \land f(-x) \neq -f(x) \Rightarrow\) Keine Symmetrie zur y-Achse oder zum Ursprung</li>
+					</ul>
+				</section>
+
+				<section> 
+					<h2>Umkehrfunktionen  </h2>
+					<ul> 
+						<li> Spiegeleung an \(y=x  \) </li>
+						<li> \(f(x) \to f^{-1}(x)  \) </li>
+						<li>Umkehrbar, wenn \(f(x)\) in \(I\) monoton ist  </li>
+						<li> \( \mathbb{D}_f \to \mathbb{W}_{f^{-1}}; \mathbb{W}_f \to \mathbb{D}_{f^{-1}}  \) </li>
+						<ul> 
+							<li> \( f(x)  \) nach \(  x\) auslösen</li>
+							<li> \( x \leftrightarrow y \) </li>
+						</ul>
 					</ul>
 				</section>
 
@@ -381,6 +400,62 @@
 						<li>Der Punkt auf der Kurve bei \(x=2\) ist \((2,\frac{1}{2})\).</li>
 						<li>Die Gleichung der Normalen lautet also: \(y-\frac{1}{2}=4(x-2)\) oder \(y=4x-\frac{15}{2}\).</li>
 					</ul>
+				</section>
+
+				
+				<section> 
+					<ul>
+						<li> \(  Wenn~ A \cap B = \phi,~P(A\cup B) =P(A) + P(B) \)</li>
+						<li> \( P(A) \geqq 0 \) </li>
+						<li> \(  P(\Omega) = 1\) </li>
+						<p></p>
+						<li> \( A \cup \bar{A} = \Omega \) </li>
+						<li> \( A \cap \bar{A} = \phi \) </li>
+						<li>\( P_A(B) = \frac{P(B\cap A)}{P(A)} \) </li>
+						<li> \(  P(A\cap B) = P(A) \cdot P(B) \) </li>
+						<li> \( P(A\cup B) =P(A) + P(B) - P(A\cap B) \) </li>
+					</ul>
+				</section>
+				<section>
+					<h2> Vierfeldertafel </h2>
+					<p>\( \begin{array} {|r|r|}\hline  & A & \bar{A} &  \\ \hline B & A\cap B & \bar{A}\cap B & P(B) \\ \hline \bar{B} & A\cap\bar{B} & \bar{A}\cap\bar{B} & P(\bar{B}) \\ \hline  & P(A) & P(\bar{A}) & P(\Omega) \\ \hline  \end{array} \)</p>
+				</section>
+				<section> 
+					<li>  Unabhängigkeit von Ergebnissen: 11 S.184/5 </li>
+					<li>Übung (+Vierfeldertafel): 11 S.184/Bsp. 3</li>
+				</section>
+				<section> 
+					<ul> 
+						<li> \(X: \omega \rightarrow X(\omega)~mit ~\omega \in \Omega ~und~ X(\omega) \in \mathbb{R}  \) </li>
+						<li> Die Wahrscheinlichkeitsfunktion ordet jedem \( x_i (i = 1,2,...,n) \) einer Zufallsgröße X die Wahrscheinlichkeit \( P(X=x_i)  \) zu</li>
+					</ul>
+				</section>
+					
+				<section> 
+					<p>Absolute Häufigkeitsverteilung vs. kumulative Häufigkeitsverteilung </p>
+				</section>
+
+				<section> 
+					<h2> Erwartungswert </h2>
+					<p> \( E(X) = \mu = x_1\cdot P(X=x_1) +x_2 \cdot P(X=x_2)+ ...+ x_n\cdot P(X=x_n) \) </p>
+					<p>Binonialverteilt: \( E(X) = \mu = n \cdot p\)</p>
+				</section>
+
+				<section>
+					<h2> Standardabweichung und Varianz </h2>
+						<p> \(\sigma = \sqrt{Var(X)}  \) </p>
+						<p> \[ Var(X) = \sum_{i=1}^{n}(x_n-\mu)^2\cdot P(X=x_n) \] </p>
+						<p>\(= (x_1-\mu)^2\cdot P(X=x_1) + (x_n-\mu)^2\cdot P(X=x_n) +...+ (x_n-\mu)^2\cdot P(X=x_n)  \)</p>
+						<p>Binomialverteilt: \( Var(X) = n\cdot p \cdot (1-p)= n\cdot p \cdot q \) </p>
+				</section>
+
+				<section> 
+					<p>\( \begin{array} {|r|r|}\hline  & mit ~Zurücklegen & ohne~ Zurücklegen \\ \hline mit~ Reihenfolge & n^k & n\cdot(n-1)\cdot...\cdot(n-k+1)  \\ \hline ohne~ Reihenfolge & \frac{(n+k-1)!}{(n-1)!\cdot k!} & \left(\begin{array}{r} n \\ k\end{array}\right) = \frac{n!}{k!\cdot(n-k)!} \\  \hline  \end{array} \)</p>
+				</section>
+				<section> 
+					<h2> Bernoulli-Experiment /-Kette </h2>
+					<p> Ein Zufallsexperiment mit exakt zwei Ergebnissen, die Wahrscheinlichkeiten sind \( p\) und \( q = (1-p) \)</p>
+					<p>\( P(X=k) = \left(\begin{array}{r} n \\ k\end{array}\right) \cdot p^k \cdot q^{n-k} \)</p>
 				</section>
 			</div>
 		</div>
