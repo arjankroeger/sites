@@ -4,6 +4,7 @@ let oX = BoX;
 let oY = BoY;
 var ScalingFactor = 55
 
+
 function derivative_explination() {
     
     var canvas = document.getElementById("derivative_explination");
