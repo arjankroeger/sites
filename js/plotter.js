@@ -1,5 +1,8 @@
-
-
+let BoX = 450;
+let BoY = 300;
+let oX = BoX;
+let oY = BoY;
+var ScalingFactor = 55
 
 function derivative_explination() {
     
@@ -12,17 +15,49 @@ function derivative_explination() {
     const canvasHeight = canvas.height;
 
     
-    const sliderMoveX = document.getElementById("movex");
-    const sliderMoveY = document.getElementById("movey");
-    var oX = parseInt(sliderMoveX.value)
-    var oY = parseInt(sliderMoveY.value)
-    //const Origin = [int(sliderMoveX.value) , int(sliderMoveY.value)];
-    const Origin = [oX , oY];
+    
+    var Origin = [oX , oY]; 
+    
 
-    const slider = document.getElementById("ScalingFactorSlider");
-    const ScalingFactor = slider.value;
+    
+    
+
+    //hin und her ziehen
+
+    let startX, startY, currentX, currentY;
+
+    canvas.addEventListener('mousedown', function(event) {
+      startX = event.clientX - canvas.offsetLeft;
+      startY = event.clientY - canvas.offsetTop;
+    });
+    
+    canvas.addEventListener('mousemove', function(event) {
+      if (startX !== undefined && startY !== undefined) {
+        currentX = event.clientX - canvas.offsetLeft;
+        currentY = event.clientY - canvas.offsetTop;
+        const deltaX = currentX - startX;
+        const deltaY = currentY - startY;
+        oX = BoX + deltaX
+        oY = BoY + deltaY
+      }
+    });
+    
+    canvas.addEventListener('mouseup', function(event) {
+        BoX = oX
+        BoY = oY
+        startX = undefined;
+        startY = undefined;
+      });
+    
 
 
+        //zooming
+    
+    canvas.addEventListener('wheel', function(event) {
+        const delta = Math.sign(event.deltaY);
+        console.log(`Scrolling: ${delta}`);
+        ScalingFactor = ScalingFactor - 0.1 * delta;
+    });
 
     const detShift = [ 10, 6]
     const detScale = 4
