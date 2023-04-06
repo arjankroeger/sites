@@ -51,26 +51,29 @@ function derivative_explination() {
 
       // mobile
       canvas.addEventListener('touchstart', function(event) {
-        startX = event.clientX - canvas.offsetLeft;
-        startY = event.clientY - canvas.offsetTop;
+        startX = event.touches[0].clientX - canvas.offsetLeft;
+        startY = event.touches[0].clientY - canvas.offsetTop;
       });
       
-      canvas.addEventListener('touchend', function(event) {
+      canvas.addEventListener('touchmove', function(event) {
         if (startX !== undefined && startY !== undefined) {
-          currentX = event.clientX - canvas.offsetLeft;
-          currentY = event.clientY - canvas.offsetTop;
+          currentX = event.touches[0].clientX - canvas.offsetLeft;
+          currentY = event.touches[0].clientY - canvas.offsetTop;
           const deltaX = currentX - startX;
           const deltaY = currentY - startY;
           oX = BoX + deltaX
           oY = BoY + deltaY
+          console.log(`moving: ${oX} , ${oY}`);
         }
       });
       
-      canvas.addEventListener('mouseup', function(event) {
+      canvas.addEventListener('touchend', function(event) {
           BoX = oX
           BoY = oY
           startX = undefined;
           startY = undefined;
+          
+          console.log(`Scrolling: ${BoX} , ${BoY}`);
         });
 
         //zooming
