@@ -2,8 +2,8 @@ let BoX = 450;
 let BoY = 300;
 let oX = BoX;
 let oY = BoY;
-var ScalingFactor = 55
-
+var ScalingFactor = 55;
+let lastDistance = 0;
 
 function derivative_explination() {
     
@@ -83,6 +83,32 @@ function derivative_explination() {
         console.log(`Scrolling: ${delta}`);
         ScalingFactor = ScalingFactor - 0.1 * delta;
     });
+
+
+      //mobile
+
+      canvas.addEventListener('touchmove', function(event) {
+        if (event.touches.length === 2) {
+          const touch1 = event.touches[0];
+          const touch2 = event.touches[1];
+          const currentDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
+
+          if (lastDistance !== null) {
+            const delta = currentDistance - lastDistance;
+            const deltaScalingFactor = delta / 100;
+            ScalingFactor += deltaScalingFactor;
+          }
+
+          lastDistance = currentDistance;
+        }
+      });
+
+      canvas.addEventListener('touchend', function(event) {
+        lastDistance = null;
+      });
+
+
+
 
     const detShift = [ 10, 6]
     const detScale = 4
