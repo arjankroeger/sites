@@ -18,8 +18,6 @@ function derivative_explination() {
     
     var Origin = [oX , oY]; 
     
-
-    
     
 
     //hin und her ziehen
