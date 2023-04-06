@@ -18,473 +18,476 @@
     <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 	</head>
 	<body>
-		<div class="reveal"> 
-			<div class="slides">
-				<section>
-					<h1>Grundwissen</h1>
-					<ul>
-						<li>Potenzgesetze</li>
-						<li>Logarithmen und Exponentialfunktionen</li>
-						<li>Trigonometrie</li>
-						<li>Rechnen mit Brüchen</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Potenzgesetze</h2>
-					<ul>
-						<li>\(a^m\cdot a^n=a^{m+n}\)</li>
-						<li>\( a^m \cdot b^m = (a\cdot b)^m \)</li>
-						<li>\( (a^m)^n = a^{m\cdot n}\)</li>
-						<li>\(a^{-~\frac{m}{n}} = \frac{1}{a^\frac{m}{n}} \)</li>
-						<li>\(\sqrt[m]{a^n} = \sqrt[m]{a}^n = a^\frac{n}{m}\)</li>
-						<li>\( (\frac{a}{b})^m = \frac{a^m}{b^m}\)</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Definition und Eigenschaften von Exponentialfunktionen</h2>
-					<ul>
-						<li> \( f(x) = a^x ; a > 0; a\neq 1\) </li>
-						<li> streng monoton \( \begin{cases} a > 1: steigend \\a <1 :fallend \\	\end{cases} \) </li>
-						<li> \[ \lim_{x \to +\infty} a^x = \begin{cases} a > 1: +\infty \\a <1 : 0 \\	\end{cases} \] </li>
-						<li> \[ \lim_{x \to -\infty} a^x \begin{cases} a > 1: 0 \\a <1 : +\infty \\	\end{cases} \] </li>
-						<li>\( y=0 \) als waagerechte Asymptot</li>
-						<li> wächst stärker als \(n^x; n\in \mathbb{R}\) \[ \rightarrow \lim_{x \to \infty} a^x > \lim_{x \to \infty} x^n ;~ a,n \in \mathbb{R}\] </li>
-						<li> \( \mathbb{D}_{max} = \mathbb{R} ; \mathbb{W} = \mathbb{R}^+ \) </li>
+<div class="reveal"> 
+	<div class="slides">
+		<section>
+			<h1>Grundwissen</h1>
+			<ul>
+				<li>Potenzgesetze</li>
+				<li>Logarithmen und Exponentialfunktionen</li>
+				<li>Trigonometrie</li>
+				<li>Rechnen mit Brüchen</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Potenzgesetze</h2>
+			<ul>
+				<li>\(a^m\cdot a^n=a^{m+n}\)</li>
+				<li>\( a^m \cdot b^m = (a\cdot b)^m \)</li>
+				<li>\( (a^m)^n = a^{m\cdot n}\)</li>
+				<li>\(a^{-~\frac{m}{n}} = \frac{1}{a^\frac{m}{n}} \)</li>
+				<li>\(\sqrt[m]{a^n} = \sqrt[m]{a}^n = a^\frac{n}{m}\)</li>
+				<li>\( (\frac{a}{b})^m = \frac{a^m}{b^m}\)</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Definition und Eigenschaften von Exponentialfunktionen</h2>
+			<ul>
+				<li> \( f(x) = a^x ; a > 0; a\neq 1\) </li>
+				<li> streng monoton \( \begin{cases} a > 1: steigend \\a <1 :fallend \\	\end{cases} \) </li>
+				<li> \[ \lim_{x \to +\infty} a^x = \begin{cases} a > 1: +\infty \\a <1 : 0 \\	\end{cases} \] </li>
+				<li> \[ \lim_{x \to -\infty} a^x \begin{cases} a > 1: 0 \\a <1 : +\infty \\	\end{cases} \] </li>
+				<li>\( y=0 \) als waagerechte Asymptot</li>
+				<li> wächst stärker als \(n^x; n\in \mathbb{R}\) \[ \rightarrow \lim_{x \to \infty} a^x > \lim_{x \to \infty} x^n ;~ a,n \in \mathbb{R}\] </li>
+				<li> \( \mathbb{D}_{max} = \mathbb{R} ; \mathbb{W} = \mathbb{R}^+ \) </li>
 
-					</ul>
-				</section>
-				<section> 
-					<h2> Definition und Eigenschaften von Logarithmen</h2>
-					<ul> 
-						<li>\(f(x)= a^x \Leftrightarrow f(x)^{-1}=log_a(x)\)</li>
-						<li> \( log_b(a) = x \leftrightarrow b^x=a~ ; ~a,b,x \in \mathbb{R} \) </li>
-						<li> \(\Rightarrow b^{log_b(a)}=a  \) </li>
-						<ul> 
-							<li> \(log_e (a) = ln  \) </li>
-							<li> \(log_{10} (a) = lg  \) </li>
-						</ul>
-						<li> \( \mathbb{D}_{max} = \mathbb{R}^+ ; \mathbb{W} = \mathbb{R} \) </li>
-						<li> \[\lim_{x\to +\infty} log(a) = +\infty ; \lim_{x\to 0} log(a) = -\infty \] </li>
-						<li> \(\log_a(b) + \log_a(c) = \log_a(b\cdot c)  \) </li>
-						<li> \( \log_a(b^c) = c\cdot\log_a(b) \) </li>
-					</ul>
-				</section>
+			</ul>
+		</section>
+		<section> 
+			<h2> Definition und Eigenschaften von Logarithmen</h2>
+			<ul> 
+				<li>\(f(x)= a^x \Leftrightarrow f(x)^{-1}=log_a(x)\)</li>
+				<li> \( log_b(a) = x \leftrightarrow b^x=a~ ; ~a,b,x \in \mathbb{R} \) </li>
+				<li> \(\Rightarrow b^{log_b(a)}=a  \) </li>
+				<ul> 
+					<li> \(log_e (a) = ln  \) </li>
+					<li> \(log_{10} (a) = lg  \) </li>
+				</ul>
+				<li> \( \mathbb{D}_{max} = \mathbb{R}^+ ; \mathbb{W} = \mathbb{R} \) </li>
+				<li> \[\lim_{x\to +\infty} log(a) = +\infty ; \lim_{x\to 0} log(a) = -\infty \] </li>
+				<li> \(\log_a(b) + \log_a(c) = \log_a(b\cdot c)  \) </li>
+				<li> \( \log_a(b^c) = c\cdot\log_a(b) \) </li>
+			</ul>
+		</section>
 
-				<section> <h2> Anwendungen von Logarithmen und Exponentialfunktionen </h2>
-					<li>Anwendungen von Exponentialfunktionen, wie z.B. Modellierung von Wachstumsprozessen</li>
-					<li>Anwendungen von Logarithmen, wie z.B. Messung von Intensität (dB), pH-Wert in der Chemie, Helligkeit von Sternen oder Berechnungen im Zusammenhang mit dem Zinseszins</li>
-				</section>
+		<section> <h2> Anwendungen von Logarithmen und Exponentialfunktionen </h2>
+			<li>Anwendungen von Exponentialfunktionen, wie z.B. Modellierung von Wachstumsprozessen</li>
+			<li>Anwendungen von Logarithmen, wie z.B. Messung von Intensität (dB), pH-Wert in der Chemie, Helligkeit von Sternen oder Berechnungen im Zusammenhang mit dem Zinseszins</li>
+		</section>
 
-				<section>
-					<h2> Rechnen mit Brüchen </h2>
-					<ul> 
-						<li> \( \frac{a}{b} \cdot \frac{c}{d} = \frac{a\cdot c}{c\cdot d} \) </li>
-						<li> \(  \frac{a}{b} : \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} \rightarrow \frac{a}{\frac{b}{c}} = \frac{ac}{b}\) </li>
-						<li> \( \frac{a}{b} \pm \frac{c}{d} = \frac{ad}{bd} \pm \frac{cb}{db} = \frac{ad \pm cb}{db}\) </li>
-					</ul>
-				</section>
-				<section> 
-					<h2>Übung  </h2>
-					<p>Zeige, dass<br> \((\frac{\sqrt[4]{\{(a+3)^2-2(a+3)b-c(2c+c^{-1})+b^2\}^3}}{e^{n\cdot\ln{(p)}}})^{\frac{4}{3}}  \)= </p>
-					<p> \( \frac{(((a+3)-b)^2-1)\cdot \frac{1}{\sqrt[3]{p}^n}}{p^n} -\frac{(2c^2)\cdot p^{-n}}{\sqrt[3]{p}^n} \) </p>
-				</section>
-				<section> 
-					<h2>Übung  </h2>
-					<ul>
-						<p>  \((\frac{\sqrt[4]{\{(a+3)^2-2(a+3)b-c(2c+c^{-1})+b^2\}^3}}{e^{n\cdot\ln{(p)}}})^{\frac{4}{3}}  \) </p>
-						<p>= \((\frac{\{(a+3)^2-2(a+3)b-c(2c+c^{-1})+b^2)\}^{\frac{3}{4}}}{e^{\cdot\ln{(p^n)}}})^{\frac{4}{3}}  \)</p>
-						<p>= \((\frac{\{(a+3)^2-2(a+3)b+b^2-c(2c+\frac{1}{c})\}^{\frac{3}{4}}}{p^n})^{\frac{4}{3}}  \)</p>
-						<p>= \(\frac{\left(\{(a+3)^2-2(a+3)b+b^2-(2c^2+\frac{c}{c})\}^{\frac{3}{4}}\right)^{\frac{4}{3}}}{(p^n)^{\frac{4}{3}}}  \)</p>
-						<p>= \(\frac{\left(\left((a+3)-b\right)^2-(2c^2+1)\right)^{\frac{4}{3}\cdot\frac{3}{4}}}{\sqrt[3]{p^{n\cdot4}}}  \)</p>
-						<p>= \( \frac{(((a+3)-b)^2-1)\cdot \frac{1}{\sqrt[3]{p}^n}}{p^n} -\frac{(2c^2)\cdot p^{-n}}{\sqrt[3]{p}^n} \) </p>
-					</ul>
-				</section>
-				<section> 
-					<h2>Übung  </h2>
-					<ul>
-						<p>  \((\frac{\sqrt[4]{\{(a+3)^2-2(a+3)b-c(2c+c^{-1})+b^2\}^3}}{e^{n\cdot\ln{(p)}}})^{\frac{4}{3}}  \) </p>
-						<p>= \(\frac{\left(\left((a+3)-b\right)^2-(2c^2+1)\right)^{\frac{4}{3}\cdot\frac{3}{4}}}{\sqrt[3]{p^{n\cdot4}}}\)</p>
-						<p>= \(\frac{\left(\left((a+3)-b\right)^2-(2c^2+1)\right)^1}{\sqrt[3]{\left(p^n\right)^4}}\) = \(\frac{\left((a+3)-b\right)^2-2c^2-1}{\sqrt[3]{\left(p^n\right)}^4}\)</p>
-						<p>= \(\frac{\left((a+3)-b\right)^2-1-2c^2}{\sqrt[3]{\left(p^n\right)}^3\cdot\sqrt[3]{\left(p^n\right)}^1}\) = \(\frac{\left((a+3)-b\right)^2-1-2c^2}{{p^n}\cdot\sqrt[3]{\left(p^n\right)}}\)</p>
-						<p>= \(\frac{\left((a+3)-b\right)^2-1}{{p^n}\cdot\sqrt[3]{\left(p^n\right)}}+ \frac{-2c^2}{{p^n}\cdot\sqrt[3]{\left(p^n\right)}}\)</p>
-						<p>= \(\frac{\left(\left((a+3)-b\right)^2-1\right)}{{p^n}\cdot\sqrt[3]{\left(p^n\right)}}- \frac{2c^2}{{p^n}\cdot\sqrt[3]{\left(p^n\right)}}\)</p>
-						<p>= \( \frac{(((a+3)-b)^2-1)\cdot \frac{1}{\sqrt[3]{p}^n}}{p^n} -\frac{(2c^2)\cdot p^{-n}}{\sqrt[3]{p}^n} \) </p>
-					</ul>
-				</section>
-				<section>
-					<h2> Trigonometrie </h2>
-					<img src="statics/Einheitskreis_Ani.gif" alt="GIF" width="40%">
-					<ul> 
-						<li> \(sin(x) = \frac{G}{H}\) </li>
-						<li> \(cos(x) = \frac{A}{H}\) </li>
-						<li> \( tan(x) = \frac{G}{A}\) </li>
-					</ul>
-				</section>
-				
-
-
-				<section>
-					<h2>Gebrochen rationale Funktionen</h2>
-						<h2>1. Einleitung</h2>
-							<p>Definition: Eine gebrochen rationale Funktion ist ein Bruch aus einem Polynom im Zähler und einem Polynom im Nenner.</p>
-							<p>\(f(x) = \frac{p(x)}{q(x)}\)</p>
-				</section>
-				<section>
-					<h2>2. Nullstellen</h2>
-					<ul>
-						<li>Definition: Eine Nullstelle ist ein Wert von x, für den der Funktionswert y gleich Null ist.</li>
-						<li>Wie kann man sie berechnen?</li>
-						<ul>
-							<li>Für eine gebrochen rationale Funktion kann man die Nullstellen durch Lösen der Gleichung im Nenner bestimmen.</li>
-							<li>Einfaches Beispiel: \(y = \frac{x+2}{x-1}\) hat eine Nullstelle bei x = -2.</li>
-							<li>Schwieriges Beispiel: \(y = \frac{x^2 + 5x + 6}{x^2 - 3x + 2}\) hat Nullstellen bei x = -2 und x = -3.</li>
-						</ul>
-					</ul>
-				</section>
-				<section>
-					<h2>3. Definitionslücken</h2>
-					<ul>
-						<li>Definition: Eine Definitionslücke tritt auf, wenn der Funktionswert nicht definiert ist, obwohl der Nenner nicht gleich Null ist.</li>
-						<li>Wie kann man sie erkennen?</li>
-						<ul>
-							<li>Definitionslücken können durch Faktorisieren des Nenners erkannt werden.</li>
-							<li>Einfaches Beispiel: \(y = \frac{1}{x-2}\) hat eine Definitionslücke bei x = 2.</li>
-							<li>Schwieriges Beispiel: \(y = \frac{x^2 - 4}{x^2 - 5x + 6}\) hat eine Definitionslücke bei x = 2 und x = 3.</li>
-						</ul>
-					</ul>
-				</section>
-				<section>
-					<h2>4. Asymptoten</h2>
-					<ul>
-						<li>Senkrechte Asymptoten</li>
-						<li>Wagrechte Asymptoten</li>
-						<li>Schräge Asypmtoten</li>
-						<li>Ganzrationale Asymptoten</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Senkrechte Asymptoten:</h2>
-						<ul>
-							<li>Treten auf, wenn der Nenner Null wird und der Zähler nicht gleich Null ist.</li>
-							<li>Die Gleichung der senkrechten Asymptote ist x = a, wobei a der Wert ist, für den der Nenner Null wird.</li>
-							<li>Einfaches Beispiel: \(y = \frac{1}{x}\) hat eine senkrechte Asymptote bei \(x = 0\).</li>
-							<li>Schwieriges Beispiel: \(y = \frac{x^2 + 1}{x-2}\) hat eine senkrechte Asymptote bei \(x = 2\).</li>
-						</ul>
-				</section>
-				<section>
-					<h2>Verhalten im Unendlichen:</h2>
-						<p>Es gibt drei Fälle zu unterscheiden:</p>
-						<ul>
-							<li>Der Grad des Zählers (\(z)\) kleiner Grad des Nenners (\(n) \Rightarrow\)  waagerechte Asymptote bei \(y = 0\).</li>
-							<li>\(z = n \Rightarrow\).  waagerechte Asymptote bei \(y = \frac{a}{b}\), wobei \(a\) der Leitkoeffizient des Zählers und \(b\) der Leitkoeffizient des Nenners ist.</li>
-							<li>\(z > n \Rightarrow\)  ein unbeschränktes Wachstum oder ein unbeschränktes Fallen, je nach Vorzeichen des Leitkoeffizienten des Zählers.</li>
-						</ul>
-				</section>
-				<section>
-					<h2>Wagrechte Asymptote bei y = 0</h2>
-					<h3>Einfaches Beispiel</h3>
-					<p>\(y = \frac{x}{x^2+1}\)</p>
-					<ul>
-						<li>Grad des Zählers: 1</li>
-						<li>Grad des Nenners: 2</li>
-						<li>Die Funktion hat eine wagrechte Asymptote bei \(y = 0\).</li>
-					</ul>
-					<h3>Schwieriges Beispiel</h3>
-					<p>\(y = \frac{2x^2-3x+1}{x^3-3x^2+2x}\)</p>
-					<ul>
-						<li>Grad des Zählers: 2</li>
-						<li>Grad des Nenners: 3</li>
-						<li>Die Funktion hat eine wagrechte Asymptote bei \(y = 0\).</li>
-					</ul>			
-				</section>
-				<section>
-					<h2>Wagrechte Asymptote bei y ungleich 0</h2>
-					<h3>Einfaches Beispiel</h3>
-					<p>\(y = \frac{x^2}{x^2+1}\)</p>
-					<ul>
-						<li>Grad des Zählers: 2</li>
-						<li>Grad des Nenners: 2</li>
-						<li>Die Funktion hat eine wagrechte Asymptote bei \(y = 1\).</li>
-					</ul>
-					<h3>Schwieriges Beispiel</h3>
-					<p>\(y = \frac{4x^4-2x^3+3x^2+5x+1}{x^4+2x^3+3x^2+4x+5}\)</p>
-					<ul>
-						<li>Grad des Zählers: 4</li>
-						<li>Grad des Nenners: 4</li>
-						<li>Die Funktion hat eine wagrechte Asymptote bei \(y = \frac{4}{1}.\)</li>
-					</ul>
-				</section>
-				<section>
-					<h3>Schräge Asymptoten:</h3>
-					<ul>
-						<li>Treten auf, wenn der Grad des Zählers genau um 1 größer ist als der Grad des Nenners.</li>
-						<li>Die Gleichung der schrägen Asymptote ist y = mx + b, wobei m der Steigungskoeffizient und b der y-Achsenabschnitt ist.</li>
-						<li>Einfaches Beispiel: \(y = \frac{x+1}{x}\) hat eine schräge Asymptote bei y = x + 1.</li>
-						<li>Schwieriges Beispiel: \(y = \frac{x^3 + 2x^2 + 1}{x^2 - x - 2}\) hat eine schräge Asymptote bei y = x + 2.</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Ganzrationale Asymptoten:</h2>
-					<ul>
-						<li>Treten auf, wenn der Grad des Zählers um mindestens 2 größer ist als der Grad des Nenners.</li>
-						<li>Die Gleichung der ganzrationalen Asymptote ist eine Polynomfunktion.</li>
-						<li>Einfaches Beispiel: \(y = \frac{x^3 - 3x + 2}{x^2 - 4}\) hat eine ganzrationale Asymptote bei y = x.</li>
-						<li>Schwieriges Beispiel: \(y = \frac{x^4 - x^3 + 2x^2 + x + 1}{x^2 + x - 2}\) hat eine ganzrationale Asymptote bei \(y = x^2 - x + 1\).</li>
-					</ul>
-				</section>
-				
-				<section>
-					<h2>gehobene Definitionslücken</h2>
-					<ul>
-						<li>Wenn eine Nennernullstelle gleich einer Zählernullstelle ist, ist dies eine gehobene Definitionslücke.</li>
-						<li>\(f(x) = \frac{z(x)}{n(x)}\)</li>
-						<li>\(Wenn~z(x_a)=0~und~n(x_a) = 0~ist~bei~x_a~eine~gehobene~Definitionslücke\)</li>
-					</ul>
-				</section>
-					
-				<section>
-					<h2>Symmetrie</h2>
-					<ul>
-						<li>\(f(x) \rightarrow f(-x) \)</li>
-						<li>Umformen versuchen zu \(f(x)\) oder \(-f(x)\)</li>
-						<li>\(f(-x) = f(x) \Rightarrow \) Achsensymmetrisch zur y-Achse</li>
-						<li>\(f(-x) = -f(x) \Rightarrow\) Punktsymmetrisch zum Ursprung</li>
-						<li>\(f(-x) \neq f(x) \land f(-x) \neq -f(x) \Rightarrow\) Keine Symmetrie zur y-Achse oder zum Ursprung</li>
-					</ul>
-				</section>
-
-				<section> 
-					<h2>Umkehrfunktionen  </h2>
-					<ul> 
-						<li> Spiegeleung an \(y=x  \) </li>
-						<li> \(f(x) \to f^{-1}(x)  \) </li>
-						<li>Umkehrbar, wenn \(f(x)\) in \(I\) monoton ist  </li>
-						<li> \( \mathbb{D}_f \to \mathbb{W}_{f^{-1}}; \mathbb{W}_f \to \mathbb{D}_{f^{-1}}  \) </li>
-						<ul> 
-							<li> \( f(x)  \) nach \(  x\) auslösen</li>
-							<li> \( x \leftrightarrow y \) </li>
-						</ul>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Ableitungen</h2>
-					<h2>Sekantensteigung zur Tangentensteigung</h3>
-					<ul>
-						<li>Die Sekantensteigung ist die Steigung einer Geraden, die durch zwei Punkte auf einer Kurve verläuft.</li>
-						<li>Die Tangentensteigung ist die Steigung einer Geraden, die die Kurve in einem bestimmten Punkt berührt.</li>
-						<li>Die h-Methode wird verwendet, um die Tangentensteigung mithilfe der Sekantensteigung zu bestimmen.</li>
-					</ul>
-				</section>
-				<section>
-					<h3>Ableitungsregeln</h3>
-					<ul>
-						<li>Summenregel:<br>  \( (u(x)+ v(x))´ = u´(x) + v´(x)\) </li>
-						<li>Produktregel:<br>  \( (u(x)\cdot v(x))´ = u´(x)\cdot v(x) + v´(x)\cdot u(x)\)</li>
-						<li>Quotientenregel:<br>  \( (\frac{z(x)}{n(x)})´ = \frac{n(x)\cdot z´(x) - z(x)\cdot n´(x)}{[n(x)]^2}\)</li>
-						<li>Kettenregel:<br> \( [h(g(x))]´ = h´(g(x)) \cdot g´(x) \) </li>
-					</ul>
-				</section>
-				<section>
-					<ul class="LaTeX">
-						<li>\(f(x) = x^2 + 3x + 4 \)</li>
-						<li>\(f(x) = \sin(x) + \cos(x) \)</li>
-						<li>\(f(x) = x^2 \cdot \ln(x)\)</li>
-						<li>\(f(x) = e^x \cdot \cos(x) \)</li>
-						<li> \(f(x) = \frac{1}{x} \)</li>
-						<li>\(f(x) = \frac{x^2 + \sin(x)}{\cos(x)} \)</li>
-						<li>\(f(x) = e^{3x} \)</li>
-						<li> \(f(x) = \sin(2x^2 + 3x) \)</li>
-					</ul>
-				</section>
-				<section>
-					<ul class="LaTeX">
-						<li>\(f(x) = x^2 + 3x + 4 \Rightarrow f'(x) = 2x + 3\)</li>
-						<li>\(f(x) = \sin(x) + \cos(x) \Rightarrow f'(x) = \cos(x) - \sin(x)\)</li>
-						<li>\(f(x) = x^2 \cdot \ln(x) \Rightarrow f'(x) = 2x\ln(x) + x\)</li>
-						<li>\(f(x) = e^x \cdot \cos(x) \Rightarrow f'(x) = e^x \cdot \cos(x) - e^x \cdot \sin(x)\)</li>
-						<li> \(f(x) = \frac{1}{x} \Rightarrow f'(x) = -\frac{1}{x^2}\)</li>
-						<li>\(f(x) = \frac{x^2 + \sin(x)}{\cos(x)} \Rightarrow f'(x) = -\frac{x^2\sin(x) + 2x\cos(x) + \sin(x)}{\cos^2(x)}\)</li>
-						<li>\(f(x) = e^{3x} \Rightarrow f'(x) = 3e^{3x}\)</li>
-						<li> \(f(x) = \sin(2x^2 + 3x) \Rightarrow f'(x) = (4x+3)\cos(2x^2+3x)\)</li>
-					</ul>
-				</section>
-				<section>
-					<ul class="LaTeX">
-						<li>\(f(x) = e^{2x} \)</li>
-						<li>\(f(x) = e^{x^2+2x} \)</li>
-						<li>\(f(x) = \sin(x) \)</li>
-						<li>\(f(x) = \cos(2x)\)</li>
-						<li>\(f(x) = \ln(x) \)</li>
-						<li> \(f(x) = \ln(x^2+1) \)</li>
-						<li>\(f(x) = \sqrt{x} \)</li>
-						<li>\(f(x) = \sqrt{x^3+2x} \)</li>
-					</ul>
-				</section>
-				<section>
-					<ul class="LaTeX">
-						<li>\(f(x) = e^{2x} \Rightarrow f'(x) = 2e^{2x}\)</li>
-						<li>\(f(x) = e^{x^2+2x} \Rightarrow f'(x) = (2x+2)e^{x^2+2x}\)</li>
-						<li>\(f(x) = \sin(x) \Rightarrow f'(x) = \cos(x)\)</li>
-						<li>\(f(x) = \cos(2x) \Rightarrow f'(x) = -2\sin(2x)\)</li>
-						<li>\(f(x) = \ln(x) \Rightarrow f'(x) = \frac{1}{x}\)</li>
-						<li> \(f(x) = \ln(x^2+1) \Rightarrow f'(x) = \frac{2x}{x^2+1}\)</li>
-						<li>\(f(x) = \sqrt{x} \Rightarrow f'(x) = \frac{1}{2\sqrt{x}}\)</li>
-						<li>\(f(x) = \sqrt{x^3+2x} \Rightarrow f'(x) = \frac{3x^2+2}{2\sqrt{x^3+2x}}\)</li>
-					</ul>
-				</section>
-
-
-				<section>
-					<h2>Extrema und Terrassenpunkte</h2>
-					<ul>
-						<li>Definition von Extrema als lokale Maxima und Minima</li>
-						<li>Berechnung von Extrema mit der Ableitung</li>
-						<ul>
-						<li>Notwendige Bedingung: \(Ableitung = 0\)</li>
-						<li>Hinreichende Bedingungen: 2. Ableitung</li>
-					</ul>
-						<li>Beispiel: \(f(x) = x^3 - 3x^2 + 4\)</li>
-					<ul>
-						<li>Bestimmung der Ableitung: \(f'(x) = 3x^2 - 6x\)</li>
-						<li>Lösen der Gleichung \(f'(x) = 0\): \(x = 0\) oder \(x = 2\)</li>
-						<li>Bestimmung der 2. Ableitung: \(f''(x) = 6x - 6\)</li>
-						<li>Überprüfung der Hinreichenden Bedingungen:</li>
-					</ul>
-					<ul>
-						<li> \(f''(0) = -6 < 0 \Rightarrow\) lokales Maximum bei \(x=0\)</li>
-						<li> \(f''(2) = 6 > 0 \Rightarrow\) lokales Minimum bei \(x=2\)</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Beispiel</h2>
-					<ul>
-						<li>1. Finde die Extremstellen der Funktion \(f(x) = x^2 - 4x + 3\)</li>
-						<li>2. Finde die Extremstellen der Funktion \(f(x) = 3x^3 - 12x^2\).</li>
-					</ul>
-				</section>
-				<section>
-					
-						<h3>1.Finde die Extremstellen der Funktion \(f(x) = x^2 - 4x + 3\)</h3>
-						<ul>
-							<li>\(f'(x) = 2x - 4\) </li>
-							<li>	Setze \(f'(x) = 0\):</li>
-							<li>\(2x - 4 = 0\)</li>
-							<li>\(x = 2\)</li>
-							<li>Die einzige Extremstelle ist bei \(x=2\). Es ist ein lokales Minimum, da \(f''(2) = 2 > 0\).</li>
-						</ul>
-						
-				</section>
-				<section>
-					<h3>1.Finde die Extremstellen der Funktion \(f(x) = 3x^3 - 12x^2\).</h3>
-					<ul>
-						<li>\(f'(x) = 9x^2 - 24x\) </li>
-						<li>	Setze \(f'(x) = 0\):</li>
-						<li>\(9x^2 - 24x = 0\)</li>
-						<li>\(3x(3x-8) = 0\)</li>
-						<li>\(x = 2\)oder \(x = \frac{8}{3}\)</li>
-						<li>Die Extremstellen sind bei \(x=0\) und \(x=\frac{8}{3}\). Es ist ein lokales Maximum bei \(x=0\), da \(f''(0) = 18 > 0\), und ein lokales Minimum bei \(x=\frac{8}{3}\), da \(f''(\frac{8}{3}) = 18 > 0\).</li>
-					</ul>
+		<section>
+			<h2> Rechnen mit Brüchen </h2>
+			<ul> 
+				<li> \( \frac{a}{b} \cdot \frac{c}{d} = \frac{a\cdot c}{c\cdot d} \) </li>
+				<li> \(  \frac{a}{b} : \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} \rightarrow \frac{a}{\frac{b}{c}} = \frac{ac}{b}\) </li>
+				<li> \( \frac{a}{b} \pm \frac{c}{d} = \frac{ad}{bd} \pm \frac{cb}{db} = \frac{ad \pm cb}{db}\) </li>
+			</ul>
+		</section>
+		<section> 
+			<h2>Übung  </h2>
+			<p>Zeige, dass<br> \((\frac{\sqrt[4]{\{(a+3)^2-2(a+3)b-c(2c+c^{-1})+b^2\}^3}}{e^{n\cdot\ln{(p)}}})^{\frac{4}{3}}  \)= </p>
+			<p> \( \frac{(((a+3)-b)^2-1)\cdot \frac{1}{\sqrt[3]{p}^n}}{p^n} -\frac{(2c^2)\cdot p^{-n}}{\sqrt[3]{p}^n} \) </p>
+		</section>
+		<section> 
+			<h2>Übung  </h2>
+			<ul>
+				<p>  \((\frac{\sqrt[4]{\{(a+3)^2-2(a+3)b-c(2c+c^{-1})+b^2\}^3}}{e^{n\cdot\ln{(p)}}})^{\frac{4}{3}}  \) </p>
+				<p>= \((\frac{\{(a+3)^2-2(a+3)b-c(2c+c^{-1})+b^2)\}^{\frac{3}{4}}}{e^{\cdot\ln{(p^n)}}})^{\frac{4}{3}}  \)</p>
+				<p>= \((\frac{\{(a+3)^2-2(a+3)b+b^2-c(2c+\frac{1}{c})\}^{\frac{3}{4}}}{p^n})^{\frac{4}{3}}  \)</p>
+				<p>= \(\frac{\left(\{(a+3)^2-2(a+3)b+b^2-(2c^2+\frac{c}{c})\}^{\frac{3}{4}}\right)^{\frac{4}{3}}}{(p^n)^{\frac{4}{3}}}  \)</p>
+				<p>= \(\frac{\left(\left((a+3)-b\right)^2-(2c^2+1)\right)^{\frac{4}{3}\cdot\frac{3}{4}}}{\sqrt[3]{p^{n\cdot4}}}  \)</p>
+				<p>= \( \frac{(((a+3)-b)^2-1)\cdot \frac{1}{\sqrt[3]{p}^n}}{p^n} -\frac{(2c^2)\cdot p^{-n}}{\sqrt[3]{p}^n} \) </p>
+			</ul>
+		</section>
+		<section> 
+			<h2>Übung  </h2>
+			<ul>
+				<p>  \((\frac{\sqrt[4]{\{(a+3)^2-2(a+3)b-c(2c+c^{-1})+b^2\}^3}}{e^{n\cdot\ln{(p)}}})^{\frac{4}{3}}  \) </p>
+				<p>= \(\frac{\left(\left((a+3)-b\right)^2-(2c^2+1)\right)^{\frac{4}{3}\cdot\frac{3}{4}}}{\sqrt[3]{p^{n\cdot4}}}\)</p>
+				<p>= \(\frac{\left(\left((a+3)-b\right)^2-(2c^2+1)\right)^1}{\sqrt[3]{\left(p^n\right)^4}}\) = \(\frac{\left((a+3)-b\right)^2-2c^2-1}{\sqrt[3]{\left(p^n\right)}^4}\)</p>
+				<p>= \(\frac{\left((a+3)-b\right)^2-1-2c^2}{\sqrt[3]{\left(p^n\right)}^3\cdot\sqrt[3]{\left(p^n\right)}^1}\) = \(\frac{\left((a+3)-b\right)^2-1-2c^2}{{p^n}\cdot\sqrt[3]{\left(p^n\right)}}\)</p>
+				<p>= \(\frac{\left((a+3)-b\right)^2-1}{{p^n}\cdot\sqrt[3]{\left(p^n\right)}}+ \frac{-2c^2}{{p^n}\cdot\sqrt[3]{\left(p^n\right)}}\)</p>
+				<p>= \(\frac{\left(\left((a+3)-b\right)^2-1\right)}{{p^n}\cdot\sqrt[3]{\left(p^n\right)}}- \frac{2c^2}{{p^n}\cdot\sqrt[3]{\left(p^n\right)}}\)</p>
+				<p>= \( \frac{(((a+3)-b)^2-1)\cdot \frac{1}{\sqrt[3]{p}^n}}{p^n} -\frac{(2c^2)\cdot p^{-n}}{\sqrt[3]{p}^n} \) </p>
+			</ul>
+		</section>
+		<section>
+			<h2> Trigonometrie </h2>
+			<img src="statics/Einheitskreis_Ani.gif" alt="GIF" width="40%">
+			<ul> 
+				<li> \(sin(x) = \frac{G}{H}\) </li>
+				<li> \(cos(x) = \frac{A}{H}\) </li>
+				<li> \( tan(x) = \frac{G}{A}\) </li>
+			</ul>
+		</section>
 		
-				</section>
-				<section>
-					<h2>Die Normale</h2>
-					<ul>
-						<li>Die Normale auf einer Kurve steht senkrecht auf der Tangente an einem bestimmten Punkt.</li>
-						<li>Die Steigung der Normalen ist das negative Kehrwert der Steigung der Tangente an diesem Punkt.</li>
-						<li>Die Gleichung der Normalen an einem Punkt mit Koordinaten \((x_0, y_0)\) auf einer Kurve \(y=f(x)\) lautet:</li>
-						<li>\(y-y_0 = -\frac{1}{f'(x_0)}(x-x_0)\)</li>
-					</ul>
-					<p>Beispiele</p>
-					<ul>
-						<li>Gegeben sei \(y=x^2\) und wir wollen die Normale an der Stelle \(x=1\) bestimmen.</li>
-						<li>Gegeben sei \(y=\frac{1}{x}\) und wir wollen die Normale an der Stelle \(x=2\) bestimmen.</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Beispiel für eine einfache Kurve:</h2>
-					<ul>
-						<li>Gegeben sei \(y=x^2\) und wir wollen die Normale an der Stelle \(x=1\) bestimmen.</li>
-						<li>Die Ableitung von \(y=x^2\) ist \(y'=2x\).</li>
-						<li>Die Steigung der Tangente an der Stelle \(x=1\) ist also \(2 \cdot 1 = 2\).</li>
-						<li>Die Steigung der Normalen an der Stelle \(x=1\) ist also \(-\frac{1}{2}\).</li>
-						<li>Der Punkt auf der Kurve bei \(x=1\) ist \((1,1)\).</li>
-						<li>Die Gleichung der Normalen lautet also: \(y-1=-\frac{1}{2}(x-1)\) oder \(y=-\frac{1}{2}x+\frac{3}{2}\).</li>
-					</ul>
 
-				</section>
-				<section>
-					<li>Beispiel für eine schwierigere Kurve:</li>
-					<ul>
-						<li>Gegeben sei \(y=\frac{1}{x}\) und wir wollen die Normale an der Stelle \(x=2\) bestimmen.</li>
-						<li>Die Ableitung von \(y=\frac{1}{x}\) ist \(y'=-\frac{1}{x^2}\).</li>
-						<li>Die Steigung der Tangente an der Stelle \(x=2\) ist also \(-\frac{1}{2^2}=-\frac{1}{4}\).</li>
-						<li>Die Steigung der Normalen an der Stelle \(x=2\) ist also \(-\frac{1}{-\frac{1}{4}}=4\).</li>
-						<li>Der Punkt auf der Kurve bei \(x=2\) ist \((2,\frac{1}{2})\).</li>
-						<li>Die Gleichung der Normalen lautet also: \(y-\frac{1}{2}=4(x-2)\) oder \(y=4x-\frac{15}{2}\).</li>
-					</ul>
-				</section>
 
+		<section>
+			<h2>Gebrochen rationale Funktionen</h2>
+				<h2>1. Einleitung</h2>
+					<p>Definition: Eine gebrochen rationale Funktion ist ein Bruch aus einem Polynom im Zähler und einem Polynom im Nenner.</p>
+					<p>\(f(x) = \frac{p(x)}{q(x)}\)</p>
+		</section>
+		<section>
+			<h2>2. Nullstellen</h2>
+			<ul>
+				<li>Definition: Eine Nullstelle ist ein Wert von x, für den der Funktionswert y gleich Null ist.</li>
+				<li>Wie kann man sie berechnen?</li>
+				<ul>
+					<li>Für eine gebrochen rationale Funktion kann man die Nullstellen durch Lösen der Gleichung im Nenner bestimmen.</li>
+					<li>Einfaches Beispiel: \(y = \frac{x+2}{x-1}\) hat eine Nullstelle bei x = -2.</li>
+					<li>Schwieriges Beispiel: \(y = \frac{x^2 + 5x + 6}{x^2 - 3x + 2}\) hat Nullstellen bei x = -2 und x = -3.</li>
+				</ul>
+			</ul>
+		</section>
+		<section>
+			<h2>3. Definitionslücken</h2>
+			<ul>
+				<li>Definition: Eine Definitionslücke tritt auf, wenn der Funktionswert nicht definiert ist, obwohl der Nenner nicht gleich Null ist.</li>
+				<li>Wie kann man sie erkennen?</li>
+				<ul>
+					<li>Definitionslücken können durch Faktorisieren des Nenners erkannt werden.</li>
+					<li>Einfaches Beispiel: \(y = \frac{1}{x-2}\) hat eine Definitionslücke bei x = 2.</li>
+					<li>Schwieriges Beispiel: \(y = \frac{x^2 - 4}{x^2 - 5x + 6}\) hat eine Definitionslücke bei x = 2 und x = 3.</li>
+				</ul>
+			</ul>
+		</section>
+		<section>
+			<h2>4. Asymptoten</h2>
+			<ul>
+				<li>Senkrechte Asymptoten</li>
+				<li>Wagrechte Asymptoten</li>
+				<li>Schräge Asypmtoten</li>
+				<li>Ganzrationale Asymptoten</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Senkrechte Asymptoten:</h2>
+				<ul>
+					<li>Treten auf, wenn der Nenner Null wird und der Zähler nicht gleich Null ist.</li>
+					<li>Die Gleichung der senkrechten Asymptote ist x = a, wobei a der Wert ist, für den der Nenner Null wird.</li>
+					<li>Einfaches Beispiel: \(y = \frac{1}{x}\) hat eine senkrechte Asymptote bei \(x = 0\).</li>
+					<li>Schwieriges Beispiel: \(y = \frac{x^2 + 1}{x-2}\) hat eine senkrechte Asymptote bei \(x = 2\).</li>
+				</ul>
+		</section>
+		<section>
+			<h2>Verhalten im Unendlichen:</h2>
+				<p>Es gibt drei Fälle zu unterscheiden:</p>
+				<ul>
+					<li>Der Grad des Zählers (\(z)\) kleiner Grad des Nenners (\(n) \Rightarrow\)  waagerechte Asymptote bei \(y = 0\).</li>
+					<li>\(z = n \Rightarrow\).  waagerechte Asymptote bei \(y = \frac{a}{b}\), wobei \(a\) der Leitkoeffizient des Zählers und \(b\) der Leitkoeffizient des Nenners ist.</li>
+					<li>\(z > n \Rightarrow\)  ein unbeschränktes Wachstum oder ein unbeschränktes Fallen, je nach Vorzeichen des Leitkoeffizienten des Zählers.</li>
+				</ul>
+		</section>
+		<section>
+			<h2>Wagrechte Asymptote bei y = 0</h2>
+			<h3>Einfaches Beispiel</h3>
+			<p>\(y = \frac{x}{x^2+1}\)</p>
+			<ul>
+				<li>Grad des Zählers: 1</li>
+				<li>Grad des Nenners: 2</li>
+				<li>Die Funktion hat eine wagrechte Asymptote bei \(y = 0\).</li>
+			</ul>
+			<h3>Schwieriges Beispiel</h3>
+			<p>\(y = \frac{2x^2-3x+1}{x^3-3x^2+2x}\)</p>
+			<ul>
+				<li>Grad des Zählers: 2</li>
+				<li>Grad des Nenners: 3</li>
+				<li>Die Funktion hat eine wagrechte Asymptote bei \(y = 0\).</li>
+			</ul>			
+		</section>
+		<section>
+			<h2>Wagrechte Asymptote bei y ungleich 0</h2>
+			<h3>Einfaches Beispiel</h3>
+			<p>\(y = \frac{x^2}{x^2+1}\)</p>
+			<ul>
+				<li>Grad des Zählers: 2</li>
+				<li>Grad des Nenners: 2</li>
+				<li>Die Funktion hat eine wagrechte Asymptote bei \(y = 1\).</li>
+			</ul>
+			<h3>Schwieriges Beispiel</h3>
+			<p>\(y = \frac{4x^4-2x^3+3x^2+5x+1}{x^4+2x^3+3x^2+4x+5}\)</p>
+			<ul>
+				<li>Grad des Zählers: 4</li>
+				<li>Grad des Nenners: 4</li>
+				<li>Die Funktion hat eine wagrechte Asymptote bei \(y = \frac{4}{1}.\)</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Schräge Asymptoten:</h3>
+			<ul>
+				<li>Treten auf, wenn der Grad des Zählers genau um 1 größer ist als der Grad des Nenners.</li>
+				<li>Die Gleichung der schrägen Asymptote ist y = mx + b, wobei m der Steigungskoeffizient und b der y-Achsenabschnitt ist.</li>
+				<li>Einfaches Beispiel: \(y = \frac{x+1}{x}\) hat eine schräge Asymptote bei y = x + 1.</li>
+				<li>Schwieriges Beispiel: \(y = \frac{x^3 + 2x^2 + 1}{x^2 - x - 2}\) hat eine schräge Asymptote bei y = x + 2.</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Ganzrationale Asymptoten:</h2>
+			<ul>
+				<li>Treten auf, wenn der Grad des Zählers um mindestens 2 größer ist als der Grad des Nenners.</li>
+				<li>Die Gleichung der ganzrationalen Asymptote ist eine Polynomfunktion.</li>
+				<li>Einfaches Beispiel: \(y = \frac{x^3 - 3x + 2}{x^2 - 4}\) hat eine ganzrationale Asymptote bei y = x.</li>
+				<li>Schwieriges Beispiel: \(y = \frac{x^4 - x^3 + 2x^2 + x + 1}{x^2 + x - 2}\) hat eine ganzrationale Asymptote bei \(y = x^2 - x + 1\).</li>
+			</ul>
+		</section>
+		
+		<section>
+			<h2>gehobene Definitionslücken</h2>
+			<ul>
+				<li>Wenn eine Nennernullstelle gleich einer Zählernullstelle ist, ist dies eine gehobene Definitionslücke.</li>
+				<li>\(f(x) = \frac{z(x)}{n(x)}\)</li>
+				<li>\(Wenn~z(x_a)=0~und~n(x_a) = 0~ist~bei~x_a~eine~gehobene~Definitionslücke\)</li>
+			</ul>
+		</section>
+			
+		<section>
+			<h2>Symmetrie</h2>
+			<ul>
+				<li>\(f(x) \rightarrow f(-x) \)</li>
+				<li>Umformen versuchen zu \(f(x)\) oder \(-f(x)\)</li>
+				<li>\(f(-x) = f(x) \Rightarrow \) Achsensymmetrisch zur y-Achse</li>
+				<li>\(f(-x) = -f(x) \Rightarrow\) Punktsymmetrisch zum Ursprung</li>
+				<li>\(f(-x) \neq f(x) \land f(-x) \neq -f(x) \Rightarrow\) Keine Symmetrie zur y-Achse oder zum Ursprung</li>
+			</ul>
+		</section>
+
+		<section> 
+			<h2>Umkehrfunktionen  </h2>
+			<ul> 
+				<li> Spiegeleung an \(y=x  \) </li>
+				<li> \(f(x) \to f^{-1}(x)  \) </li>
+				<li>Umkehrbar, wenn \(f(x)\) in \(I\) monoton ist  </li>
+				<li> \( \mathbb{D}_f \to \mathbb{W}_{f^{-1}}; \mathbb{W}_f \to \mathbb{D}_{f^{-1}}  \) </li>
+				<ul> 
+					<li> \( f(x)  \) nach \(  x\) auslösen</li>
+					<li> \( x \leftrightarrow y \) </li>
+				</ul>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Ableitungen</h2>
+			<h2>Sekantensteigung zur Tangentensteigung</h3>
+			<ul>
+				<li>Die Sekantensteigung ist die Steigung einer Geraden, die durch zwei Punkte auf einer Kurve verläuft.</li>
+				<li>Die Tangentensteigung ist die Steigung einer Geraden, die die Kurve in einem bestimmten Punkt berührt.</li>
+				<li>Die h-Methode wird verwendet, um die Tangentensteigung mithilfe der Sekantensteigung zu bestimmen.</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Ableitungsregeln</h3>
+			<ul>
+				<li>Summenregel:<br>  \( (u(x)+ v(x))´ = u´(x) + v´(x)\) </li>
+				<li>Produktregel:<br>  \( (u(x)\cdot v(x))´ = u´(x)\cdot v(x) + v´(x)\cdot u(x)\)</li>
+				<li>Quotientenregel:<br>  \( (\frac{z(x)}{n(x)})´ = \frac{n(x)\cdot z´(x) - z(x)\cdot n´(x)}{[n(x)]^2}\)</li>
+				<li>Kettenregel:<br> \( [h(g(x))]´ = h´(g(x)) \cdot g´(x) \) </li>
+			</ul>
+		</section>
+		<section>
+			<ul class="LaTeX">
+				<li>\(f(x) = x^2 + 3x + 4 \)</li>
+				<li>\(f(x) = \sin(x) + \cos(x) \)</li>
+				<li>\(f(x) = x^2 \cdot \ln(x)\)</li>
+				<li>\(f(x) = e^x \cdot \cos(x) \)</li>
+				<li> \(f(x) = \frac{1}{x} \)</li>
+				<li>\(f(x) = \frac{x^2 + \sin(x)}{\cos(x)} \)</li>
+				<li>\(f(x) = e^{3x} \)</li>
+				<li> \(f(x) = \sin(2x^2 + 3x) \)</li>
+			</ul>
+		</section>
+		<section>
+			<ul class="LaTeX">
+				<li>\(f(x) = x^2 + 3x + 4 \Rightarrow f'(x) = 2x + 3\)</li>
+				<li>\(f(x) = \sin(x) + \cos(x) \Rightarrow f'(x) = \cos(x) - \sin(x)\)</li>
+				<li>\(f(x) = x^2 \cdot \ln(x) \Rightarrow f'(x) = 2x\ln(x) + x\)</li>
+				<li>\(f(x) = e^x \cdot \cos(x) \Rightarrow f'(x) = e^x \cdot \cos(x) - e^x \cdot \sin(x)\)</li>
+				<li> \(f(x) = \frac{1}{x} \Rightarrow f'(x) = -\frac{1}{x^2}\)</li>
+				<li>\(f(x) = \frac{x^2 + \sin(x)}{\cos(x)} \Rightarrow f'(x) = -\frac{x^2\sin(x) + 2x\cos(x) + \sin(x)}{\cos^2(x)}\)</li>
+				<li>\(f(x) = e^{3x} \Rightarrow f'(x) = 3e^{3x}\)</li>
+				<li> \(f(x) = \sin(2x^2 + 3x) \Rightarrow f'(x) = (4x+3)\cos(2x^2+3x)\)</li>
+			</ul>
+		</section>
+		<section>
+			<ul class="LaTeX">
+				<li>\(f(x) = e^{2x} \)</li>
+				<li>\(f(x) = e^{x^2+2x} \)</li>
+				<li>\(f(x) = \sin(x) \)</li>
+				<li>\(f(x) = \cos(2x)\)</li>
+				<li>\(f(x) = \ln(x) \)</li>
+				<li> \(f(x) = \ln(x^2+1) \)</li>
+				<li>\(f(x) = \sqrt{x} \)</li>
+				<li>\(f(x) = \sqrt{x^3+2x} \)</li>
+			</ul>
+		</section>
+		<section>
+			<ul class="LaTeX">
+				<li>\(f(x) = e^{2x} \Rightarrow f'(x) = 2e^{2x}\)</li>
+				<li>\(f(x) = e^{x^2+2x} \Rightarrow f'(x) = (2x+2)e^{x^2+2x}\)</li>
+				<li>\(f(x) = \sin(x) \Rightarrow f'(x) = \cos(x)\)</li>
+				<li>\(f(x) = \cos(2x) \Rightarrow f'(x) = -2\sin(2x)\)</li>
+				<li>\(f(x) = \ln(x) \Rightarrow f'(x) = \frac{1}{x}\)</li>
+				<li> \(f(x) = \ln(x^2+1) \Rightarrow f'(x) = \frac{2x}{x^2+1}\)</li>
+				<li>\(f(x) = \sqrt{x} \Rightarrow f'(x) = \frac{1}{2\sqrt{x}}\)</li>
+				<li>\(f(x) = \sqrt{x^3+2x} \Rightarrow f'(x) = \frac{3x^2+2}{2\sqrt{x^3+2x}}\)</li>
+			</ul>
+		</section>
+
+
+		<section>
+			<h2>Extrema und Terrassenpunkte</h2>
+			<ul>
+				<li>Definition von Extrema als lokale Maxima und Minima</li>
+				<li>Berechnung von Extrema mit der Ableitung</li>
+				<ul>
+				<li>Notwendige Bedingung: \(Ableitung = 0\)</li>
+				<li>Hinreichende Bedingungen: 2. Ableitung</li>
+			</ul>
+				<li>Beispiel: \(f(x) = x^3 - 3x^2 + 4\)</li>
+			<ul>
+				<li>Bestimmung der Ableitung: \(f'(x) = 3x^2 - 6x\)</li>
+				<li>Lösen der Gleichung \(f'(x) = 0\): \(x = 0\) oder \(x = 2\)</li>
+				<li>Bestimmung der 2. Ableitung: \(f''(x) = 6x - 6\)</li>
+				<li>Überprüfung der Hinreichenden Bedingungen:</li>
+			</ul>
+			<ul>
+				<li> \(f''(0) = -6 < 0 \Rightarrow\) lokales Maximum bei \(x=0\)</li>
+				<li> \(f''(2) = 6 > 0 \Rightarrow\) lokales Minimum bei \(x=2\)</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Beispiel</h2>
+			<ul>
+				<li>1. Finde die Extremstellen der Funktion \(f(x) = x^2 - 4x + 3\)</li>
+				<li>2. Finde die Extremstellen der Funktion \(f(x) = 3x^3 - 12x^2\).</li>
+			</ul>
+		</section>
+		<section>
+			
+				<h3>1.Finde die Extremstellen der Funktion \(f(x) = x^2 - 4x + 3\)</h3>
+				<ul>
+					<li>\(f'(x) = 2x - 4\) </li>
+					<li>	Setze \(f'(x) = 0\):</li>
+					<li>\(2x - 4 = 0\)</li>
+					<li>\(x = 2\)</li>
+					<li>Die einzige Extremstelle ist bei \(x=2\). Es ist ein lokales Minimum, da \(f''(2) = 2 > 0\).</li>
+				</ul>
 				
-				<section> 
-					<ul>
-						<li> \(  Wenn~ A \cap B = \phi,~P(A\cup B) =P(A) + P(B) \)</li>
-						<li> \( P(A) \geqq 0 \) </li>
-						<li> \(  P(\Omega) = 1\) </li>
-						<p></p>
-						<li> \( A \cup \bar{A} = \Omega \) </li>
-						<li> \( A \cap \bar{A} = \phi \) </li>
-						<li>\( P_A(B) = \frac{P(B\cap A)}{P(A)} \) </li>
-						<li> \(  P(A\cap B) = P(A) \cdot P(B) \) </li>
-						<li> \( P(A\cup B) =P(A) + P(B) - P(A\cap B) \) </li>
-					</ul>
-				</section>
-				<section>
-					<h2> Vierfeldertafel </h2>
-					<p>\( \begin{array} {|r|r|}\hline  & A & \bar{A} &  \\ \hline B & A\cap B & \bar{A}\cap B & P(B) \\ \hline \bar{B} & A\cap\bar{B} & \bar{A}\cap\bar{B} & P(\bar{B}) \\ \hline  & P(A) & P(\bar{A}) & P(\Omega) \\ \hline  \end{array} \)</p>
-				</section>
-				<section> 
-					<li>  Unabhängigkeit von Ergebnissen: 11 S.184/5 </li>
-					<li>Übung (+Vierfeldertafel): 11 S.184/Bsp. 3</li>
-					<p>\( \begin{array} {|r|r|}\hline  & V & \bar{V} &  \\ \hline J & 0,0012 & 0,0788 & P(B) \\ \hline \bar{J} & 0,0048 & 0,9152 & P(\bar{B}) \\ \hline  & \frac{6}{1000} & \frac{994}{1000} & P(\Omega) \\ \hline  \end{array} \)</p>
+		</section>
+		<section>
+			<h3>1.Finde die Extremstellen der Funktion \(f(x) = 3x^3 - 12x^2\).</h3>
+			<ul>
+				<li>\(f'(x) = 9x^2 - 24x\) </li>
+				<li>	Setze \(f'(x) = 0\):</li>
+				<li>\(9x^2 - 24x = 0\)</li>
+				<li>\(3x(3x-8) = 0\)</li>
+				<li>\(x = 2\)oder \(x = \frac{8}{3}\)</li>
+				<li>Die Extremstellen sind bei \(x=0\) und \(x=\frac{8}{3}\). Es ist ein lokales Maximum bei \(x=0\), da \(f''(0) = 18 > 0\), und ein lokales Minimum bei \(x=\frac{8}{3}\), da \(f''(\frac{8}{3}) = 18 > 0\).</li>
+			</ul>
 
-				</section>
-				<section> 
-					<ul> 
-						<li> \(X: \omega \rightarrow X(\omega)~mit ~\omega \in \Omega ~und~ X(\omega) \in \mathbb{R}  \) </li>
-						<li> Die Wahrscheinlichkeitsfunktion ordet jedem \( x_i (i = 1,2,...,n) \) einer Zufallsgröße X die Wahrscheinlichkeit \( P(X=x_i)  \) zu</li>
-					</ul>
-				</section>
-					
-				<section> 
-					<p>Absolute Häufigkeitsverteilung vs. kumulative Häufigkeitsverteilung </p>
-				</section>
+		</section>
+		<section>
+			<h2>Die Normale</h2>
+			<ul>
+				<li>Die Normale auf einer Kurve steht senkrecht auf der Tangente an einem bestimmten Punkt.</li>
+				<li>Die Steigung der Normalen ist das negative Kehrwert der Steigung der Tangente an diesem Punkt.</li>
+				<li>Die Gleichung der Normalen an einem Punkt mit Koordinaten \((x_0, y_0)\) auf einer Kurve \(y=f(x)\) lautet:</li>
+				<li>\(y-y_0 = -\frac{1}{f'(x_0)}(x-x_0)\)</li>
+			</ul>
+			<p>Beispiele</p>
+			<ul>
+				<li>Gegeben sei \(y=x^2\) und wir wollen die Normale an der Stelle \(x=1\) bestimmen.</li>
+				<li>Gegeben sei \(y=\frac{1}{x}\) und wir wollen die Normale an der Stelle \(x=2\) bestimmen.</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Beispiel für eine einfache Kurve:</h2>
+			<ul>
+				<li>Gegeben sei \(y=x^2\) und wir wollen die Normale an der Stelle \(x=1\) bestimmen.</li>
+				<li>Die Ableitung von \(y=x^2\) ist \(y'=2x\).</li>
+				<li>Die Steigung der Tangente an der Stelle \(x=1\) ist also \(2 \cdot 1 = 2\).</li>
+				<li>Die Steigung der Normalen an der Stelle \(x=1\) ist also \(-\frac{1}{2}\).</li>
+				<li>Der Punkt auf der Kurve bei \(x=1\) ist \((1,1)\).</li>
+				<li>Die Gleichung der Normalen lautet also: \(y-1=-\frac{1}{2}(x-1)\) oder \(y=-\frac{1}{2}x+\frac{3}{2}\).</li>
+			</ul>
 
-				<section> 
-					<h2> Erwartungswert </h2>
-					<p> \( E(X) = \mu = x_1\cdot P(X=x_1) +x_2 \cdot P(X=x_2)+ ...+ x_n\cdot P(X=x_n) \) </p>
-					<p>Binonialverteilt: \( E(X) = \mu = n \cdot p\)</p>
-				</section>
+		</section>
+		<section>
+			<li>Beispiel für eine schwierigere Kurve:</li>
+			<ul>
+				<li>Gegeben sei \(y=\frac{1}{x}\) und wir wollen die Normale an der Stelle \(x=2\) bestimmen.</li>
+				<li>Die Ableitung von \(y=\frac{1}{x}\) ist \(y'=-\frac{1}{x^2}\).</li>
+				<li>Die Steigung der Tangente an der Stelle \(x=2\) ist also \(-\frac{1}{2^2}=-\frac{1}{4}\).</li>
+				<li>Die Steigung der Normalen an der Stelle \(x=2\) ist also \(-\frac{1}{-\frac{1}{4}}=4\).</li>
+				<li>Der Punkt auf der Kurve bei \(x=2\) ist \((2,\frac{1}{2})\).</li>
+				<li>Die Gleichung der Normalen lautet also: \(y-\frac{1}{2}=4(x-2)\) oder \(y=4x-\frac{15}{2}\).</li>
+			</ul>
+		</section>
 
-				<section>
-					<h2> Standardabweichung und Varianz </h2>
-						<p> \(\sigma = \sqrt{Var(X)}  \) </p>
-						<p> \[ Var(X) = \sum_{i=1}^{n}(x_n-\mu)^2\cdot P(X=x_n) \] </p>
-						<p>\(= (x_1-\mu)^2\cdot P(X=x_1) + (x_n-\mu)^2\cdot P(X=x_n) +...+ (x_n-\mu)^2\cdot P(X=x_n)  \)</p>
-						<p>Binomialverteilt: \( Var(X) = n\cdot p \cdot (1-p)= n\cdot p \cdot q \) </p>
-				</section>
+		
+		<section> 
+			<ul>
+				<li> \(  Wenn~ A \cap B = \phi,~P(A\cup B) =P(A) + P(B) \)</li>
+				<li> \( P(A) \geqq 0 \) </li>
+				<li> \(  P(\Omega) = 1\) </li>
+				<p></p>
+				<li> \( A \cup \bar{A} = \Omega \) </li>
+				<li> \( A \cap \bar{A} = \phi \) </li>
+				<li>\( P_A(B) = \frac{P(B\cap A)}{P(A)} \) </li>
+				<li> \(  P(A\cap B) = P(A) \cdot P(B) \) </li>
+				<li> \( P(A\cup B) =P(A) + P(B) - P(A\cap B) \) </li>
+			</ul>
+		</section>
+		<section>
+			<h2> Vierfeldertafel </h2>
+			<p>\( \begin{array} {|r|r|}\hline  & A & \bar{A} &  \\ \hline B & A\cap B & \bar{A}\cap B & P(B) \\ \hline \bar{B} & A\cap\bar{B} & \bar{A}\cap\bar{B} & P(\bar{B}) \\ \hline  & P(A) & P(\bar{A}) & P(\Omega) \\ \hline  \end{array} \)</p>
+		</section>
+		<section> 
+			<li>  Unabhängigkeit von Ergebnissen: 11 S.184/5 </li>
+			<li>Übung (+Vierfeldertafel): 11 S.184/Bsp. 3</li>
+			<p>\( \begin{array} {|r|r|}\hline  & V & \bar{V} &  \\ \hline J & 0,0012 & 0,0788 & P(B) \\ \hline \bar{J} & 0,0048 & 0,9152 & P(\bar{B}) \\ \hline  & \frac{6}{1000} & \frac{994}{1000} & P(\Omega) \\ \hline  \end{array} \)</p>
 
-				<section> 
-					<p>\( \begin{array} {|r|r|}\hline  & mit ~Zurücklegen & ohne~ Zurücklegen \\ \hline mit~ Reihenfolge & n^k & n\cdot(n-1)\cdot...\cdot(n-k+1)  \\ \hline ohne~ Reihenfolge & \frac{(n+k-1)!}{(n-1)!\cdot k!} & \left(\begin{array}{r} n \\ k\end{array}\right) = \frac{n!}{k!\cdot(n-k)!} \\  \hline  \end{array} \)</p>
-				</section>
-				<section> 
-					<h2> Bernoulli-Experiment /-Kette </h2>
-					<p> Ein Zufallsexperiment mit exakt zwei Ergebnissen, die Wahrscheinlichkeiten sind \( p\) und \( q = (1-p) \)</p>
-					<p>\( P(X=k) = \left(\begin{array}{r} n \\ k\end{array}\right) \cdot p^k \cdot q^{n-k} \)</p>
-				</section>
-			</div>
-		</div>
+		</section>
+		<section> 
+			<ul> 
+				<li> \(X: \omega \rightarrow X(\omega)~mit ~\omega \in \Omega ~und~ X(\omega) \in \mathbb{R}  \) </li>
+				<li> Die Wahrscheinlichkeitsfunktion ordet jedem \( x_i (i = 1,2,...,n) \) einer Zufallsgröße X die Wahrscheinlichkeit \( P(X=x_i)  \) zu</li>
+			</ul>
+		</section>
+			
+		<section> 
+			<p>Absolute Häufigkeitsverteilung vs. kumulative Häufigkeitsverteilung </p>
+		</section>
+
+		<section> 
+			<h2> Erwartungswert </h2>
+			<p> \( E(X) = \mu = x_1\cdot P(X=x_1) +x_2 \cdot P(X=x_2)+ ...+ x_n\cdot P(X=x_n) \) </p>
+			<p>Binonialverteilt: \( E(X) = \mu = n \cdot p\)</p>
+		</section>
+
+		<section>
+			<h2> Standardabweichung und Varianz </h2>
+				<p> \(\sigma = \sqrt{Var(X)}  \) </p>
+				<p> \[ Var(X) = \sum_{i=1}^{n}(x_n-\mu)^2\cdot P(X=x_n) \] </p>
+				<p>\(= (x_1-\mu)^2\cdot P(X=x_1) + (x_n-\mu)^2\cdot P(X=x_n) +...+ (x_n-\mu)^2\cdot P(X=x_n)  \)</p>
+				<p>Binomialverteilt: \( Var(X) = n\cdot p \cdot (1-p)= n\cdot p \cdot q \) </p>
+		</section>
+
+		<section> 
+			<p>\( \begin{array} {|r|r|}\hline  & mit ~Zurücklegen & ohne~ Zurücklegen \\ \hline mit~ Reihenfolge & n^k & n\cdot(n-1)\cdot...\cdot(n-k+1)  \\ \hline ohne~ Reihenfolge & \frac{(n+k-1)!}{(n-1)!\cdot k!} & \left(\begin{array}{r} n \\ k\end{array}\right) = \frac{n!}{k!\cdot(n-k)!} \\  \hline  \end{array} \)</p>
+		</section>
+		<section> 
+			<h2> Bernoulli-Experiment /-Kette </h2>
+			<p> Ein Zufallsexperiment mit exakt zwei Ergebnissen, die Wahrscheinlichkeiten sind \( p\) und \( q = (1-p) \)</p>
+			<p>\( P(X=k) = \left(\begin{array}{r} n \\ k\end{array}\right) \cdot p^k \cdot q^{n-k} \)</p>
+		</section>
+		<section> 
+			<canvas id="a" width="600" height="500" style="border:1px solid #000000;"></canvas>
+		</section>
+	</div>
+</div>
 
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
@@ -501,5 +504,6 @@
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
+		<script src="js/plotter.js"></script>
 	</body>
 </html>
