@@ -49,6 +49,29 @@ function derivative_explination() {
       });
     
 
+      // mobile
+      canvas.addEventListener('touchstart', function(event) {
+        startX = event.clientX - canvas.offsetLeft;
+        startY = event.clientY - canvas.offsetTop;
+      });
+      
+      canvas.addEventListener('touchend', function(event) {
+        if (startX !== undefined && startY !== undefined) {
+          currentX = event.clientX - canvas.offsetLeft;
+          currentY = event.clientY - canvas.offsetTop;
+          const deltaX = currentX - startX;
+          const deltaY = currentY - startY;
+          oX = BoX + deltaX
+          oY = BoY + deltaY
+        }
+      });
+      
+      canvas.addEventListener('mouseup', function(event) {
+          BoX = oX
+          BoY = oY
+          startX = undefined;
+          startY = undefined;
+        });
 
         //zooming
     
