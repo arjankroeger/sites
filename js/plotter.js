@@ -30,7 +30,6 @@ function plotter() {
   for (let idx = 0; idx < id.length; idx++ ){
 
 
-
     var canvas = document.getElementById(id[idx]);
     var ctx = canvas.getContext("2d");
     ctx.strokeStyle = 'black'
