@@ -125,7 +125,12 @@ function plotter() {
         if (moveAndScroll.includes(id[idx])){
         oX[idx] = BoX[idx] + deltaX
         oY[idx] = BoY[idx] + deltaY
-      }
+        }
+        
+        if (D3.includes(id[idx])) {
+          theta = Otheta + deltaY / 100;
+          phi = Ophi - deltaX / 100;
+        }
       }
     });
   
@@ -135,6 +140,10 @@ function plotter() {
         BoY[idx] = oY[idx]
         startX[idx] = undefined;
         startY[idx] = undefined;
+        if (D3.includes(id[idx])) {
+          Otheta = theta;
+          Ophi = phi;
+        }
 
         
       });
