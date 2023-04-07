@@ -1,10 +1,10 @@
-let id = ["plotter","integral"];
-let func= ["x**2","-0.05*(x-8)**2+5"];
+let id = ["plotter","integral","derivative"];
+let func= ["x**2","-0.05*(x-8)**2+5","0,05x**3+0.1x**2"];
 let BoX = new Array(id.length).fill(450)
 let BoY = new Array(id.length).fill(300)
 let oX = new Array(id.length).fill(450)
 let oY = new Array(id.length).fill(300)
-let ScalingFactor = [55,60];
+let ScalingFactor = [55,60,55];
 let lastDistance = new Array(id.length).fill(0)
 let Origin = Array(id.length).fill([1,1]); 
 let startX = new Array(id.length);
