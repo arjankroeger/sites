@@ -16,7 +16,6 @@ oX[1] = 150; oY[1]=450;
 function plotter() {
   for (let idx = 0; idx < id.length; idx++ ){
 
-    
 
 
     var canvas = document.getElementById(id[idx]);
