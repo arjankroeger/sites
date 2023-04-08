@@ -145,7 +145,7 @@ function plotter() {
       lastDistance[idx] = null;
       });
 
-
+//------------------------------------------------------------------------------------
     
     if (D3.includes(id[idx])){
         console.log("t")
@@ -188,7 +188,7 @@ function plotter() {
           zn = parseInt(Corners[i][2]);
           xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
           yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-          zr = Math.cos(theta)*Math.cos(theta)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
           if(i==0){
             ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]))
           }
@@ -202,7 +202,7 @@ function plotter() {
         ctx.stroke();
         ctx.fill();
 
-
+//------------------------------------------------------------------------------------
 
 
         // details
@@ -211,54 +211,103 @@ function plotter() {
         var detShift = [ 10, 6]
         var detScale = 4
         //paint axis 1. x ; 2. y
-        ctx.beginPath();
-        ctx.lineWidth = 2
-        ctx.moveTo(0, Origin[idx][1]);
-        ctx.lineTo(canvasWidth, Origin[idx][1]);
-        ctx.stroke();
+          ctx.beginPath();
+          xn = -10;
+          yn = 0;
+          zn = 0;
+          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
+          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
+          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+          ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
+          xn = 10;
+          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
+          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
+          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+          ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
+          ctx.stroke()
+          
+          ctx.beginPath();
+          yn = -10;
+          xn = 0;
+          zn = 0;
+          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
+          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
+          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+          ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
+          yn = 10;
+          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
+          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
+          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+          ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
+          ctx.stroke()
+          
+          ctx.beginPath();
+          zn = -10;
+          xn = 0;
+          yn = 0;
+          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
+          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
+          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+          ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
+          zn = 10;
+          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
+          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
+          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+          ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
+          ctx.stroke()
 
-        ctx.beginPath();
-        ctx.lineWidth = 2;
-        ctx.moveTo(Origin[idx][0], 0);
-        ctx.lineTo(Origin[idx][0], canvasHeight);
-        ctx.stroke();
+        
 
         //details on axis
         //x
         ctx.beginPath();
-        ctx.lineWidth = 2;
-        ctx.moveTo(canvasWidth-detShift[0]-2*detScale, Origin[idx][1]+detShift[1]+2*detScale);
-        ctx.lineTo(canvasWidth-detShift[0], Origin[idx][1]+detShift[1]);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.lineWidth = 2;
-        ctx.moveTo(canvasWidth-detShift[0], Origin[idx][1]+detShift[1]+2*detScale);
-        ctx.lineTo(canvasWidth-detShift[0]-2*detScale, Origin[idx][1]+detShift[1]);
-        ctx.stroke();
+        xn = -11;
+        yn = 0;
+        zn = 0;
+        xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
+        yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
+        zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+        ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+25);
+        ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] , -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+25);
+        ctx.stroke()
 
         //y
         ctx.beginPath();
-        ctx.lineWidth = 2;
-        ctx.moveTo(Origin[idx][0]+detShift[0]+detScale, detShift[1]+2*detScale);
-        ctx.lineTo(Origin[idx][0]+detShift[0], detShift[1]);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.lineWidth = 2;
-        ctx.moveTo(Origin[idx][0]+detShift[0], detShift[1]+4*detScale);
-        ctx.lineTo(Origin[idx][0]+detShift[0]+2*detScale, detShift[1]);
-        ctx.stroke();
+        xn = 0;
+        yn = -11;
+        zn = 0;
+        xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
+        yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
+        zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+        ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+35);
+        ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -5, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+25);
+        ctx.stroke()
         
+        //z
+        ctx.beginPath();
+        xn = 0;
+        yn = 0;
+        zn = 11;
+        xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
+        yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
+        zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+        ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] , -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+25);
+        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] , -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+25);
+        ctx.stroke()
+
+        
+        ctx.strokeStyle = "red"
         //arrows
+        
         ctx.beginPath();
-        ctx.lineWidth = 2
-        ctx.moveTo(canvasWidth, Origin[idx][1]);
-        ctx.lineTo(canvasWidth-2*detScale, Origin[idx][1]-2*detScale);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.lineWidth = 2
-        ctx.moveTo(canvasWidth, Origin[idx][1]);
-        ctx.lineTo(canvasWidth-2*detScale, Origin[idx][1]+2*detScale);
-        ctx.stroke();
+        xn = -10;
+        ctx.stroke()
 
         ctx.beginPath();
         ctx.lineWidth = 2
@@ -270,7 +319,10 @@ function plotter() {
         ctx.moveTo(Origin[idx][0], 0);
         ctx.lineTo(Origin[idx][0]+2*detScale, 2*detScale);
         ctx.stroke();
+        
 
+
+        ctx.strokeStyle = "black"
         // marks on axis
         
         for (i = 1 ; i <= canvasWidth/ScalingFactor[idx]; i++){
