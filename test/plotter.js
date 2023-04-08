@@ -4,7 +4,7 @@ let BoX = new Array(id.length).fill(450)
 let BoY = new Array(id.length).fill(300)
 let oX = new Array(id.length).fill(450)
 let oY = new Array(id.length).fill(300)
-let ScalingFactor = [20];
+let ScalingFactor = [30];
 let lastDistance = new Array(id.length).fill(0)
 let Origin = Array(id.length).fill([1,1]); 
 let startX = new Array(id.length);
@@ -13,7 +13,7 @@ let graph = ["plotter","integral","derivative"]
 let D3 = ["3DPlane"]
 let moveAndScroll = ["plotter"]
 let spin = ["3DPlane"]
-oX[0] = 450; oY[0]=300; 
+oX[0] = 900; oY[0]=600; 
 let BderivativePoints = [-1,4]
 let derivativePoints = [-1,4]
 
@@ -36,19 +36,7 @@ function plotter() {
     var canvasWidth = canvas.width;
     var canvasHeight = canvas.height;
 
-    let realLeft, realTop
-    if (id[idx] == "derivative"){
-      // get the bounding rectangle of the element
-      const rect = canvas.getBoundingClientRect();
-  
-      // get the page scroll offsets
-      const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
-      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-  
-      // calculate the top and left coordinates
-      realTop = rect.top + scrollY;
-      realLeft = rect.left + scrollX;
-    }
+   
 
 
     Origin[idx] = [oX[idx] , oY[idx]]; 
@@ -62,7 +50,7 @@ function plotter() {
       startX[idx] = event.clientX - canvas.offsetLeft;
       startY[idx] = event.clientY - canvas.offsetTop;
       ctx.beginPath();
-      ctx.arc(startX[idx]-realLeft, startY[idx], 10, 0, 2 * Math.PI);
+      ctx.arc(startX[idx], startY[idx], 10, 0, 2 * Math.PI);
       ctx.stroke();
     });
     
@@ -72,20 +60,8 @@ function plotter() {
         currentY = event.clientY - canvas.offsetTop;
         var deltaX = currentX - startX[idx];
         var deltaY = currentY - startY[idx];
-        if (moveAndScroll.includes(id[idx])){
-        oX[idx] = BoX[idx] + deltaX
-        oY[idx] = BoY[idx] + deltaY
-        }
-        if (id[idx] == "derivative"){
-          if ( currentX > derivativePoints[0] - 10 && currentX < derivativePoints[0]  ){
-            derivativePoints[0] = BderivativePoints[0] + deltaX/100
-          }
-          //console.log(currentX , derivativePoints[0]* ScalingFactor[idx] +Origin[idx][0],  derivativePoints[1]* ScalingFactor[idx] +Origin[idx][0])
-          if ( currentX > derivativePoints[1] - 10 && currentX < derivativePoints[1] + 10  ){
-            derivativePoints[1] = BderivativePoints[1] + deltaX/100
-          }
-          
-        }
+      
+        
         if (D3.includes(id[idx])) {
           theta = Otheta + deltaY / 100;
           phi = Ophi - deltaX / 100;
@@ -94,13 +70,7 @@ function plotter() {
     });
     
     canvas.addEventListener('mouseup', function(event) {
-      if (moveAndScroll.includes(id[idx])){
-        BoX[idx] = oX[idx]
-        BoY[idx] = oY[idx]
-      }
-      else if (id[idx] == "derivative"){
-        BderivativePoints[0] = derivativePoints[0]
-      }
+      
       if (D3.includes(id[idx])) {
         Otheta = theta;
         Ophi = phi;
@@ -122,10 +92,7 @@ function plotter() {
         currentY = event.touches[0].clientY - canvas.offsetTop;
         var deltaX = currentX - startX[idx];
         var deltaY = currentY - startY[idx];
-        if (moveAndScroll.includes(id[idx])){
-        oX[idx] = BoX[idx] + deltaX
-        oY[idx] = BoY[idx] + deltaY
-        }
+        
         
         if (D3.includes(id[idx])) {
           theta = Otheta + deltaY / 100;
