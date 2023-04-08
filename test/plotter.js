@@ -9,18 +9,29 @@ let lastDistance = new Array(id.length).fill(0)
 let Origin = Array(id.length).fill([1,1]); 
 let startX = new Array(id.length);
 let startY = new Array(id.length);
-let graph = ["plotter","integral","derivative"]
 let D3 = ["3DPlane"]
-let moveAndScroll = ["plotter"]
 let spin = ["3DPlane"]
 oX[0] = 900; oY[0]=600; 
-let BderivativePoints = [-1,4]
-let derivativePoints = [-1,4]
-
 let Otheta = 314/100;
 let Ophi = 314/100;
 let theta = Otheta;
 let phi = Ophi;
+
+function rot(coords){
+  let coordsr = new Array(3);
+  xn = coords[0];
+  yn = coords[1];
+  zn = coords[2];
+  /*coordsr[0] = Math.cos(phi)*xn+Math.sin(phi)*zn;
+  coordsr[1] = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
+  coordsr[2] = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+  */
+  coordsr[0] = Math.cos(phi) * xn + Math.sin(phi) * Math.sin(theta) * yn + Math.sin(phi) * Math.cos(theta) *zn;
+  coordsr[1] = Math.cos(theta) *yn - Math.sin(theta)*zn;
+  coordsr[2] = 0-Math.sin(phi)*xn + Math.cos(phi) * Math.sin(theta) * yn + Math.cos(phi) *Math.cos(theta) *zn;      
+  
+  return coordsr
+}
 
 function plotter() {
   for (let idx = 0; idx < id.length; idx++ ){
@@ -183,16 +194,11 @@ function plotter() {
       
         ctx.beginPath();
         for (i=0; i<4; i++) {
-          xn = parseInt(Corners[i][0]);
-          yn = parseInt(Corners[i][1]);
-          zn = parseInt(Corners[i][2]);
-          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
-          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
+          coordsr = rot([parseInt(Corners[i][0]), parseInt(Corners[i][1]), parseInt(Corners[i][2])])
           if(i==0){
-            ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]))
+            ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]))
           }
-          ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
+          ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
           
         }
 
@@ -208,52 +214,27 @@ function plotter() {
         // details
         
         ctx.strokeStyle = "black"
-        var detShift = [ 10, 6]
         var detScale = 4
         //paint axis 1. x ; 2. y
           ctx.beginPath();
-          xn = -10;
-          yn = 0;
-          zn = 0;
-          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
-          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
-          ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
-          xn = 10;
-          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
-          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
-          ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
+          coordsr = rot([-11, 0, 0])
+          ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
+          coordsr = rot([11, 0, 0])
+          ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
           ctx.stroke()
           
           ctx.beginPath();
-          yn = -10;
-          xn = 0;
-          zn = 0;
-          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
-          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
-          ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
-          yn = 10;
-          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
-          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
-          ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
+          coordsr = rot([0, -11, 0])
+          ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
+          coordsr = rot([0, 11, 0])
+          ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
           ctx.stroke()
           
           ctx.beginPath();
-          zn = -10;
-          xn = 0;
-          yn = 0;
-          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
-          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
-          ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
-          zn = 10;
-          xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
-          yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-          zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
-          ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1]));
+          coordsr = rot([0, 0, -11])
+          ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
+          coordsr = rot([00, 0, 11])
+          ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
           ctx.stroke()
 
         
@@ -261,44 +242,29 @@ function plotter() {
         //details on axis
         //x
         ctx.beginPath();
-        xn = -11;
-        yn = 0;
-        zn = 0;
-        xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
-        yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-        zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
-        ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
-        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+25);
-        ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
-        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] , -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+25);
+        coordsr = rot([-9, 0, 0])
+        ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -10, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+25);
+        ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -10, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] , -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+25);
         ctx.stroke()
 
         //y
         ctx.beginPath();
-        xn = 0;
-        yn = -11;
-        zn = 0;
-        xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
-        yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-        zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
-        ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0], -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
-        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+35);
-        ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
-        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -5, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+25);
+        coordsr = rot([0, -12, 0])
+        ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -10, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+35);
+        ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -10, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -5, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+25);
         ctx.stroke()
         
         //z
         ctx.beginPath();
-        xn = 0;
-        yn = 0;
-        zn = 11;
-        xr = Math.cos(phi)*xn+Math.sin(phi)*zn;
-        yr = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
-        zr = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
-        ctx.moveTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
-        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] , -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+15);
-        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] -10, -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+25);
-        ctx.lineTo((20* xr)/(30-zr)* ScalingFactor[idx] +Origin[idx][0] , -((20* yr)/(30-zr)*ScalingFactor[idx]-Origin[idx][1])+25);
+        coordsr = rot([0, 0, 12])
+        ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -10, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] , -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+15);
+        ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -10, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+25);
+        ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] , -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+25);
         ctx.stroke()
 
         
