@@ -12,8 +12,8 @@ let startY = new Array(id.length);
 let D3 = ["3DPlane"]
 let spin = ["3DPlane"]
 oX[0] = 900; oY[0]=600; 
-let Otheta = 314/100;
-let Ophi = 314/100;
+let Otheta = 471/100;
+let Ophi = 450/100;
 let theta = Otheta;
 let phi = Ophi;
 
@@ -74,7 +74,7 @@ function plotter() {
       
         
         if (D3.includes(id[idx])) {
-          theta = Otheta + deltaY / 100;
+          theta = Otheta - deltaY / 100;
           phi = Ophi - deltaX / 100;
         }
       }
@@ -159,7 +159,6 @@ function plotter() {
 //------------------------------------------------------------------------------------
     
     if (D3.includes(id[idx])){
-        console.log("t")
 
 
         let equ = func[idx];   
@@ -180,20 +179,25 @@ function plotter() {
             valLambsID.push(i)
           }
         }
+
         
-        var chain = [0,1,3,2]
-        for(e = 0; e <4; e++){
+        let chain 
+        if (valLambs.length == 8){chain = [0,5,3,1,4,2,6,7]}
+        if (valLambs.length == 6){chain = [0,5,3,1,4,2]}
+        else if (valLambs.length == 4) {chain = [0,1,3,2]}
+        else {chain = [0,3,1,4,2]}
+        for(e = 0; e < valLambs.length; e++){
           var i = valLambsID[chain[e]];
-          var lamb = valLambs[i]
+          var lamb = valLambs[e]
           let borders = [[lamb,10,10],[lamb,10,-10],[lamb,-10,10],[lamb,-10,-10],
                       [10,lamb,10],[10,lamb,-10],[-10,lamb,10],[-10,lamb,-10],
                       [10,10,lamb],[10,-10,lamb],[-10,10,lamb],[-10,-10,lamb],]
-          Corners.push([parseInt(eval(borders[i][0])),parseInt(eval(borders[i][1])),parseInt(eval(borders[i][2]))])
+          Corners.push([eval(borders[i][0]),eval(borders[i][1]),eval(borders[i][2])])
+
         }
       
-      
         ctx.beginPath();
-        for (i=0; i<4; i++) {
+        for (i=0; i<valLambs.length; i++) {
           coordsr = rot([parseInt(Corners[i][0]), parseInt(Corners[i][1]), parseInt(Corners[i][2])])
           if(i==0){
             ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]))
@@ -215,34 +219,23 @@ function plotter() {
         
         ctx.strokeStyle = "black"
         var detScale = 4
-        //paint axis 1. x ; 2. y
+        //paint axis 1. x ; 2. y 3. z
+        
+        let axisList = [[[-11, 0, 0],[11, 0, 0]],[[0, -11, 0],[0, 11, 0]],[[0, 0, -11],[0, 0, 11]],[[10,10,10],[10,10,-10]],[[10,-10,-10],[10,10,-10]],[[-10,10,-10],[10,10,-10]],[[10,10,10],[10,-10,10]],[[-10,-10,10],[10,-10,10]],[[-10,-10,-10],[10,-10,-10]],[[10,-10,10],[10,-10,-10]],[[10,10,10],[-10,10,10]],[[-10,-10,10],[-10,10,10]],[[-10,10,10],[-10,10,-10]],[[-10,-10,10],[-10,-10,-10]]]
+        for (i = 0; i < axisList.length ; i++ ){
           ctx.beginPath();
-          coordsr = rot([-11, 0, 0])
+          coordsr = rot(axisList[i][0])
           ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
-          coordsr = rot([11, 0, 0])
+          coordsr = rot(axisList[i][1])
           ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
           ctx.stroke()
-          
-          ctx.beginPath();
-          coordsr = rot([0, -11, 0])
-          ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
-          coordsr = rot([0, 11, 0])
-          ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
-          ctx.stroke()
-          
-          ctx.beginPath();
-          coordsr = rot([0, 0, -11])
-          ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
-          coordsr = rot([00, 0, 11])
-          ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1]));
-          ctx.stroke()
-
+        }
         
 
         //details on axis
         //x
         ctx.beginPath();
-        coordsr = rot([-9, 0, 0])
+        coordsr = rot([12, 0, 0])
         ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+15);
         ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -10, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+25);
         ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -10, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+15);
@@ -251,7 +244,7 @@ function plotter() {
 
         //y
         ctx.beginPath();
-        coordsr = rot([0, -12, 0])
+        coordsr = rot([0, 12, 0])
         ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0], -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+15);
         ctx.lineTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -10, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+35);
         ctx.moveTo((30* coordsr[0])/(30-coordsr[2])* ScalingFactor[idx] +Origin[idx][0] -10, -((30* coordsr[1])/(30-coordsr[2])*ScalingFactor[idx]-Origin[idx][1])+15);
@@ -270,7 +263,6 @@ function plotter() {
         
         ctx.strokeStyle = "red"
         //arrows
-        
         ctx.beginPath();
         xn = -10;
         ctx.stroke()
