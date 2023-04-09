@@ -4,6 +4,8 @@ let BoX = new Array(id.length).fill(450)
 let BoY = new Array(id.length).fill(300)
 let oX = new Array(id.length).fill(450)
 let oY = new Array(id.length).fill(300)
+let rClickX = new Array(id.length)
+let rClickY = new Array(id.length)
 let ScalingFactor = [55,60,55,20];
 let lastDistance = new Array(id.length).fill(0)
 let Origin = Array(id.length).fill([1,1]); 
@@ -39,18 +41,13 @@ function plotter() {
     var canvasWidth = canvas.width;
     var canvasHeight = canvas.height;
 
-    let realLeft, realTop
+    let offsetX = 0;
+    let offsetY = 0;
     if (id[idx] == "derivative"){
       // get the bounding rectangle of the element
       const rect = canvas.getBoundingClientRect();
-  
-      // get the page scroll offsets
-      const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
-      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-  
-      // calculate the top and left coordinates
-      realTop = rect.top + scrollY;
-      realLeft = rect.left + scrollX;
+      offsetX = rect.left;
+      offsetY = rect.top;
     }
 
 
@@ -62,17 +59,23 @@ function plotter() {
     let currentX = undefined, currentY = undefined
 
     canvas.addEventListener('mousedown', function(event) {
-      startX[idx] = event.clientX - canvas.offsetLeft;
-      startY[idx] = event.clientY - canvas.offsetTop;
-      ctx.beginPath();
-      ctx.arc(startX[idx]-realLeft, startY[idx], 10, 0, 2 * Math.PI);
-      ctx.stroke();
+      startX[idx] = parseInt(event.clientX) ;
+      startY[idx] = parseInt(event.clientY)  ;
+      rClickX[idx] = parseInt(parseInt(startX[idx]-offsetX));
+      rClickY[idx] = parseInt(parseInt(startY[idx]-offsetY));
     });
     
+    
+    ctx.beginPath();
+    ctx.arc(rClickX[idx],rClickY[idx], 10, 0, 2 * Math.PI);
+    ctx.stroke()
+    console.log(rClickX[idx],rClickY[idx])
+    
+
     canvas.addEventListener('mousemove', function(event) {
       if (startX[idx] !== undefined && startY[idx] !== undefined) {
-        currentX = event.clientX - canvas.offsetLeft;
-        currentY = event.clientY - canvas.offsetTop;
+        currentX = event.clientX ;
+        currentY = event.clientY;
         var deltaX = currentX - startX[idx];
         var deltaY = currentY - startY[idx];
         if (moveAndScroll.includes(id[idx])){
@@ -115,14 +118,14 @@ function plotter() {
 
     // mobile
     canvas.addEventListener('touchstart', function(event) {
-      startX[idx] = event.touches[0].clientX - canvas.offsetLeft;
-      startY[idx] = event.touches[0].clientY - canvas.offsetTop;
+      startX[idx] = event.touches[0].clientX;
+      startY[idx] = event.touches[0].clientY;
     });
     
     canvas.addEventListener('touchmove', function(event) {
       if (startX[idx] !== undefined && startY[idx] !== undefined) {
-        currentX = event.touches[0].clientX - canvas.offsetLeft;
-        currentY = event.touches[0].clientY - canvas.offsetTop;
+        currentX = event.touches[0].clientX ;
+        currentY = event.touches[0].clientY ;
         var deltaX = currentX - startX[idx];
         var deltaY = currentY - startY[idx];
         if (moveAndScroll.includes(id[idx])){
@@ -475,4 +478,4 @@ function plotter() {
 }
 
 
-    setInterval(plotter, 100)
+    setInterval(plotter, 1000)
