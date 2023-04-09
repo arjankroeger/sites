@@ -1,5 +1,5 @@
 let id = ["3DPlane"];
-let func= [[1,0,1,0]];
+let func= [[1,1,0,0]];
 let BoX = new Array(id.length).fill(450)
 let BoY = new Array(id.length).fill(300)
 let oX = new Array(id.length).fill(450)
@@ -12,8 +12,8 @@ let startY = new Array(id.length);
 let D3 = ["3DPlane"]
 let spin = ["3DPlane"]
 oX[0] = 900; oY[0]=600; 
-let Otheta = 471/100;
-let Ophi = 450/100;
+let Otheta = 314/100;
+let Ophi = 314/100;
 let theta = Otheta;
 let phi = Ophi;
 
@@ -180,7 +180,7 @@ function plotter() {
           }
         }
 
-        
+        console.log(valLambs, valLambsID)
         let chain 
         if (valLambs.length == 8){chain = [0,5,3,1,4,2,6,7]}
         if (valLambs.length == 6){chain = [0,5,3,1,4,2]}
@@ -192,6 +192,7 @@ function plotter() {
           let borders = [[lamb,10,10],[lamb,10,-10],[lamb,-10,10],[lamb,-10,-10],
                       [10,lamb,10],[10,lamb,-10],[-10,lamb,10],[-10,lamb,-10],
                       [10,10,lamb],[10,-10,lamb],[-10,10,lamb],[-10,-10,lamb],]
+          //console.log(lamb, i, valLambsID, e, valLambs.length )
           Corners.push([eval(borders[i][0]),eval(borders[i][1]),eval(borders[i][2])])
 
         }
