@@ -1,5 +1,5 @@
-let id = ["plotter","integral","derivative","3DPlane"];
-let func= ["x**2","-0.05*(x-8)**2+5","0.3*(x-3)**3+1.2*(x-3)**2-0.5",[1,0,1,0]];
+let id = ["integral","plotter","derivative","3DPlane"];
+let func= ["-0.05*(x-8)**2+5","x**2","0.3*(x-3)**3+1.2*(x-3)**2-0.5",[1,0,1,0]];
 let BoX = new Array(id.length).fill(450)
 let BoY = new Array(id.length).fill(300)
 let oX = new Array(id.length).fill(450)
@@ -18,7 +18,7 @@ let spin = ["3DPlane"]
 var sliderIntegralDeltaXSlider = document.getElementById("slider");
 var sliderRotationX = document.getElementById("sliderRotX");
 var sliderRotationY = document.getElementById("sliderRotY");
-oX[1] = 150; oY[1]=450; 
+oX[0] = 150; oY[0]=450; 
 oX[3] = 450; oY[3]=300; 
 let BderivativePoints = [-1,4]
 let derivativePoints = [-1,4]
