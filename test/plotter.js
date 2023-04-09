@@ -180,7 +180,7 @@ function plotter() {
           }
         }
 
-        console.log(valLambs, valLambsID)
+        console.log(valLambs, valLambsID, lambs)
         let chain 
         if (valLambs.length == 8){chain = [0,5,3,1,4,2,6,7]}
         if (valLambs.length == 6){chain = [0,5,3,1,4,2]}
