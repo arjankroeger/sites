@@ -1,17 +1,32 @@
-let id = ["integral","plotter","derivative","3DPlane","thales"];
-let func= ["-0.05*(x-8)**2+5","x**2","0.3*(x-3)**3+1.2*(x-3)**2-0.5",[1,0,1,0],"Math.sqrt(25-x**2)"];
+let id = ["integral","plotter","derivative","3DPlane","thales","intplot1","intplot2","intplot3"];
+let func= ["-0.05*(x-8)**2+5","x**2","0.3*(x-3)**3+1.2*(x-3)**2-0.5",[1,0,1,0],"Math.sqrt(25-x**2)","0.1*x**2+0.3*x-1","1/x**2","0.1*x**3-0.2*x**2+3"];
 let BoX = new Array(id.length).fill(450)
 let BoY = new Array(id.length).fill(300)
 let oX = new Array(id.length).fill(450)
 let oY = new Array(id.length).fill(300)
 let rClickX = new Array(id.length)
 let rClickY = new Array(id.length)
-let ScalingFactor = [55,60,55,20,50];
+let ScalingFactor = [55,60,55,20,50,50,140,40];
 let lastDistance = new Array(id.length).fill(0)
 let Origin = Array(id.length).fill([1,1]); 
 let startX = new Array(id.length);
 let startY = new Array(id.length);
-let graph = ["plotter","integral","derivative","thales"]
+let graph = ["plotter","integral","derivative","thales","intplot1","intplot2","intplot3"]
+let ColorArea = ["intplot1","intplot2"]
+let ColorAreaBetween = ["intplot3"]
+let secondGraph = {
+  intplot3: "0.1*(x-4)**2",
+}
+let ColorAreaLowerBound = {
+  intplot1: -2,
+  intplot2: 1,
+  intplot3: -3
+  }
+let ColorAreaUpperBound = {
+  intplot1: 4,
+  intplot2: 4,
+  intplot3: 4
+  }
 let D3 = ["3DPlane"]
 let moveAndScroll = ["plotter"]
 let spin = ["3DPlane"]
@@ -22,6 +37,9 @@ var thalesShift = document.getElementById("thalesShift");
 oX[0] = 150; oY[0]=400; 
 oX[3] = 450; oY[3]=300; 
 oX[4] = 400; oY[4]=350; 
+oX[5] = 150; oY[5]=150; 
+oX[6] = 100; oY[6]=350; 
+oX[7] = 300; oY[7]=300; 
 let BderivativePoints = [-1,4]
 let derivativePoints = [-1,4]
 
@@ -29,6 +47,7 @@ let Otheta =  parseInt(sliderRotationX.value)/100;
 let Ophi = parseInt(sliderRotationY.value)/100;
 let theta = Otheta;
 let phi = Ophi;
+let locFunc = ""
 
 function plotter() {
   for (let idx = 0; idx < id.length; idx++ ){
@@ -68,10 +87,6 @@ function plotter() {
     });
     
     
-    ctx.beginPath();
-    ctx.arc(rClickX[idx],rClickY[idx], 10, 0, 2 * Math.PI);
-    ctx.stroke()
-    console.log(rClickX[idx],rClickY[idx])
     
 
     canvas.addEventListener('mousemove', function(event) {
@@ -88,8 +103,7 @@ function plotter() {
           if ( currentX > derivativePoints[0] - 10 && currentX < derivativePoints[0]  ){
             derivativePoints[0] = BderivativePoints[0] + deltaX/100
           }
-          //console.log(currentX , derivativePoints[0]* ScalingFactor[idx] +Origin[idx][0],  derivativePoints[1]* ScalingFactor[idx] +Origin[idx][0])
-          if ( currentX > derivativePoints[1] - 10 && currentX < derivativePoints[1] + 10  ){
+           if ( currentX > derivativePoints[1] - 10 && currentX < derivativePoints[1] + 10  ){
             derivativePoints[1] = BderivativePoints[1] + deltaX/100
           }
           
@@ -186,6 +200,51 @@ function plotter() {
 
 
     if (graph.includes(id[idx])){
+
+      if (ColorArea.includes( id[idx]) ){
+        let x1 = ColorAreaLowerBound[id[idx]]
+        let x2 = ColorAreaUpperBound[id[idx]]  
+        ctx.beginPath();
+        ctx.fillStyle ="lightblue"
+        ctx.moveTo(x1* ScalingFactor[idx] +Origin[idx][0], -(0*ScalingFactor[idx]-Origin[idx][1]))
+
+        for (let i = x1*100 ; i <= x2*100; i++) {
+          var x = i/100
+          var y = eval(func[idx])
+          ctx.lineTo(x* ScalingFactor[idx] +Origin[idx][0], -(y*ScalingFactor[idx]-Origin[idx][1]));
+      }
+      ctx.lineTo(x2* ScalingFactor[idx] +Origin[idx][0], -(0*ScalingFactor[idx]-Origin[idx][1]))
+      ctx.lineTo(x1* ScalingFactor[idx] +Origin[idx][0], -(0*ScalingFactor[idx]-Origin[idx][1]))
+      ctx.stroke();
+      ctx.fill();
+      
+      ctx.fillStyle="black"
+
+      }else  if (ColorAreaBetween.includes( id[idx]) ){
+        let x1 = ColorAreaLowerBound[id[idx]]
+        let x2 = ColorAreaUpperBound[id[idx]]  
+        ctx.beginPath();
+        ctx.fillStyle ="lightblue"
+        ctx.moveTo(x1* ScalingFactor[idx] +Origin[idx][0], -(0*ScalingFactor[idx]-Origin[idx][1]))
+
+        for (let i = x1*100 ; i <= x2*100; i++) {
+          var x = i/100
+          var y = eval(func[idx])
+          ctx.lineTo(x* ScalingFactor[idx] +Origin[idx][0], -(y*ScalingFactor[idx]-Origin[idx][1]));
+      }
+      locFunc = secondGraph[id[idx]]
+        for (let i = x2*100 ; i >= x1*100; i--) {
+          var x = i/100
+          var y = eval(locFunc)
+          ctx.lineTo(x* ScalingFactor[idx] +Origin[idx][0], -(y*ScalingFactor[idx]-Origin[idx][1]));
+    }
+      ctx.lineTo(x1* ScalingFactor[idx] +Origin[idx][0], -(0*ScalingFactor[idx]-Origin[idx][1]));
+      ctx.stroke();
+      ctx.fill();
+      
+      ctx.fillStyle="black"
+    }
+
         var detShift = [ 10, 6]
       var detScale = 4
       //paint axis 1. x ; 2. y
@@ -279,7 +338,7 @@ function plotter() {
       // paint function
       ctx.beginPath();
       ctx.lineWidth = 2
-      if(id[idx]=="thales"){
+       if(id[idx]=="thales"){
         ctx.moveTo(-5* ScalingFactor[idx] +Origin[idx][0], -(0*ScalingFactor[idx]-Origin[idx][1]))
       }else{
       ctx.moveTo(0, 0);
@@ -290,8 +349,22 @@ function plotter() {
           ctx.lineTo(x* ScalingFactor[idx] +Origin[idx][0], -(y*ScalingFactor[idx]-Origin[idx][1]));
       }
       ctx.stroke();
+
+      if (ColorAreaBetween.includes(id[idx])){
+        ctx.beginPath();
+      ctx.lineWidth = 2
+      ctx.moveTo(0, 0);
+    }
+    locFunc = secondGraph[id[idx]]
+      for (let i = -canvasWidth/ScalingFactor[idx]*10 ; i <= canvasWidth /ScalingFactor[idx]*10; i++) {
+          var x = i/10
+          var y = eval(locFunc)
+          ctx.lineTo(x* ScalingFactor[idx] +Origin[idx][0], -(y*ScalingFactor[idx]-Origin[idx][1]));
+      }
+      ctx.stroke();
+      }
       
-      if(id[idx] == "thales"){
+       if(id[idx] == "thales"){
         var x = parseInt(thalesShift.value)/20
         ctx.beginPath();
         ctx.strokeStyle = 'orange'
@@ -493,7 +566,7 @@ function plotter() {
 
 
   }
-}
+
 
 
     setInterval(plotter, 100)
