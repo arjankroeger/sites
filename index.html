@@ -488,11 +488,20 @@
 		<section>
 			<h1>Geometrie</h1>
 		</section>
+		
+		<section> 
+			<h2> Satz des Thales </h2>
+			<canvas id="thales" width="800" height="500" style="border:1px solid #000000;"></canvas>
+			<div class="slidecontainer">
+				<input type="range" min="-100" max="100" value="0" class="slider" id="thalesShift">
+			</div>
+		</section>
 		<section> 
 			<h2>Vektoraddition</h2>
-			<img src="statics/vektorAddition.png" alt="GIF" width="80%">
+			
 			<p>\( \left(\begin{array}{r} x_1 \\ x_2 \\ x_3 \end{array}\right) + \left(\begin{array}{r} y_1 \\ y_2 \\ y_3 \end{array}\right) = \left(\begin{array}{r} x_1 +y_1\\ x_2 +y_2 \\ x_3+y_3 \end{array}\right)\)</p>
-		</section>
+		
+			<img src="statics/vektorAddition.png" alt="GIF" width="50%"></section>
 		<section> 
 			<h2> Betrag  und Länge von Vektoren</h2>
 		<p>\(  |\vec{a}|=  \left(\begin{array}{r} a_1 \\ a_2 \\ a_3 \end{array}\right) =\sqrt{a_1~^2+a_2~^2+a_3~^2}\)</p>
@@ -544,10 +553,27 @@
 		</section>
 		<section> 
 			<h2> Ebende </h2>
-			<p>Parameterform: \(  \)</p>
+			<p>Parameterform: \( E: \vec{X} = \vec{A} + \lambda\cdot\vec{v}+\mu\cdot \vec{u} \)</p>
+			<p>Normalenform: \( E: \vec{n}\circ\left(\vec{AX}\right)=0  \)</p>
+			<p>\(E: \vec{n}\circ\vec{X}-\vec{n}\circ\vec{A}=0\)</p>
+			<p>\(  \vec{n}\circ{X} = (u_2v_3-v_2u_3)x_1 + (v_1u_3-u_1v_3)x_2+(u_1v_2-v_2u_1)x_3 \)</p>
+			<p>\(  \vec{n}\circ{X} = n_1x_1+n_2x_2+n_3x_3 \)</p>
+			<p>\(  \vec{n}\circ{A} = (u_2v_3-v_2u_3)a_1 + (v_1u_3-u_1v_3)a_2+(u_1v_2-v_2u_1)a_3 \)</p>
+			<p>\(  \vec{n}\circ{A} = -n_0 \)</p>
+
 		</section>
-
-
+		<section> 
+			<p>\(  \vec{n}\circ{X} = n_1x_1+n_2x_2+n_3x_3 ~;~ \vec{n}\circ{A} =- n_0 \)</p>
+			<p>\(  E: n_1x_1+n_2x_2+n_3x_3+n_0 =0\)</p>
+			<p>HNF:  \( E:\frac{ n_1x_1+n_2x_2+n_3x_3}{\pm\sqrt{n_1^2+n_2^2+n_3^2}}+n_0 =0 \)</p>
+			<p>\(E: \vec{n_0}\circ\left(\vec{AX}\right)=0\) </p>
+		</section>
+		<section> 
+			<h3>Gegenseitige Lage von 2 Ebenen  </h3>
+			\( \begin{array} {|r|r|}\hline  & schneiden~sich & gleich &  parallel\\ \hline\vec{n}~\parallel~\vec{m}& nein & ja&ja \\ \hline  gemeinsammer~Punkt? & & ja & nein \\ \hline  \end{array} \)
+			<h3>Gegenseitige Lage von Ebene \( E\) und Gerade  \(  g\)</h3>
+			\( \begin{array} {|r|r|}\hline  & Schnittpunkt & g\in E &  g\parallel E\\ \hline\vec{n}\perp\vec{v} & nein & ja&ja \\ \hline  \vec{A} \in E & & ja & nein \\ \hline  \end{array} \)
+		</section>
 
 		<section> 
 			<canvas id="integral" width="900" height="600" style="border:1px solid #000000;"></canvas>

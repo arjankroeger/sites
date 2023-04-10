@@ -1,25 +1,27 @@
-let id = ["integral","plotter","derivative","3DPlane"];
-let func= ["-0.05*(x-8)**2+5","x**2","0.3*(x-3)**3+1.2*(x-3)**2-0.5",[1,0,1,0]];
+let id = ["integral","plotter","derivative","3DPlane","thales"];
+let func= ["-0.05*(x-8)**2+5","x**2","0.3*(x-3)**3+1.2*(x-3)**2-0.5",[1,0,1,0],"Math.sqrt(25-x**2)"];
 let BoX = new Array(id.length).fill(450)
 let BoY = new Array(id.length).fill(300)
 let oX = new Array(id.length).fill(450)
 let oY = new Array(id.length).fill(300)
 let rClickX = new Array(id.length)
 let rClickY = new Array(id.length)
-let ScalingFactor = [55,60,55,20];
+let ScalingFactor = [55,60,55,20,40];
 let lastDistance = new Array(id.length).fill(0)
 let Origin = Array(id.length).fill([1,1]); 
 let startX = new Array(id.length);
 let startY = new Array(id.length);
-let graph = ["plotter","integral","derivative"]
+let graph = ["plotter","integral","derivative","thales"]
 let D3 = ["3DPlane"]
 let moveAndScroll = ["plotter"]
 let spin = ["3DPlane"]
 var sliderIntegralDeltaXSlider = document.getElementById("slider");
 var sliderRotationX = document.getElementById("sliderRotX");
 var sliderRotationY = document.getElementById("sliderRotY");
+var thalesShift = document.getElementById("thalesShift");
 oX[0] = 150; oY[0]=450; 
 oX[3] = 450; oY[3]=300; 
+oX[4] = 400; oY[4]=350; 
 let BderivativePoints = [-1,4]
 let derivativePoints = [-1,4]
 
@@ -277,7 +279,11 @@ function plotter() {
       // paint function
       ctx.beginPath();
       ctx.lineWidth = 2
+      if(id[idx]=="thales"){
+        ctx.moveTo(-5* ScalingFactor[idx] +Origin[idx][0], -(0*ScalingFactor[idx]-Origin[idx][1]))
+      }else{
       ctx.moveTo(0, 0);
+    }
       for (let i = -canvasWidth/ScalingFactor[idx]*10 ; i <= canvasWidth /ScalingFactor[idx]*10; i++) {
           var x = i/10
           var y = eval(func[idx])
@@ -285,8 +291,20 @@ function plotter() {
       }
       ctx.stroke();
       
+      if(id[idx] == "thales"){
+        var x = parseInt(thalesShift.value)/20
+        ctx.beginPath();
+        ctx.strokeStyle = 'orange'
+        ctx.moveTo(-5* ScalingFactor[idx] +Origin[idx][0], -(0*ScalingFactor[idx]-Origin[idx][1]));
+        var y = eval(Math.sqrt(25-x**2)) ;
+        ctx.lineTo(x* ScalingFactor[idx] +Origin[idx][0], -(y*ScalingFactor[idx]-Origin[idx][1]));
+        ctx.lineTo(5* ScalingFactor[idx] +Origin[idx][0], -(0*ScalingFactor[idx]-Origin[idx][1]));
+        ctx.moveTo(x* ScalingFactor[idx] +Origin[idx][0], -(y*ScalingFactor[idx]-Origin[idx][1]));
+        ctx.lineTo(0* ScalingFactor[idx] +Origin[idx][0], -(0*ScalingFactor[idx]-Origin[idx][1]));
+        ctx.stroke();
+        ctx.strokeStyle = 'black'
 
-      if (id[idx] == "integral"){
+      }else if (id[idx] == "integral"){
         var sliderIntegralDeltaX = (1501 - parseInt(sliderIntegralDeltaXSlider.value))/30;
         var count = Math.ceil(20/sliderIntegralDeltaX)-1
         for (i = 0; i <= count; i++){  
@@ -478,4 +496,4 @@ function plotter() {
 }
 
 
-    setInterval(plotter, 1000)
+    setInterval(plotter, 100)
