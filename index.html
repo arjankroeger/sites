@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
+
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -16,8 +17,9 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es7"></script>
     <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-
 	</head>
+
+
 	<body>
 <div class="reveal"> 
 	<div class="slides">
@@ -242,7 +244,6 @@
 				<li>\(Wenn~z(x_a)=0~und~n(x_a) = 0~ist~bei~x_a~eine~gehobene~Definitionslücke\)</li>
 			</ul>
 		</section>
-			
 		<section>
 			<h2>Symmetrie</h2>
 			<ul>
@@ -488,7 +489,17 @@
 		<section>
 			<h1>Geometrie</h1>
 		</section>
-		
+		<section> 
+			<h3>Scheitel-, Stufen- und Wechselwinkel</h3>
+			<img src="statics/StufenScheitelWechselWinkel.png"  width="30%"  >  
+			<p>\( \gamma  \) ist ein Scheitel-, \( \varepsilon \) ist ein Stufen- und \( \eta\) ein Wechselwinkel zum Winkel mit 57°</p>
+		</section>
+		<section> 
+			<img src="statics/HausDerVierecke.png" width=" 70%">
+		</section>
+		<section>
+			<img src="statics/Dreiecksarten.svg" width=" 60%">
+		</section>
 		<section> 
 			<h2> Satz des Thales </h2>
 			<canvas id="thales" width="800" height="500" style="border:1px solid #000000;"></canvas>
@@ -575,19 +586,53 @@
 			\( \begin{array} {|r|r|}\hline  & Schnittpunkt & g\in E &  g\parallel E\\ \hline\vec{n}\perp\vec{v} & nein & ja&ja \\ \hline  \vec{A} \in E & & ja & nein \\ \hline  \end{array} \)
 		</section>
 
-		<section> 
-			<canvas id="integral" width="900" height="600" style="border:1px solid #000000;"></canvas>
+
+		<section>
+				<h1> Analysis 12 </h1>
+		</section>
+		
+		<section> <h2> Integrale </h2>
+			<canvas id="integral" width="900" height="500" style="border:1px solid #000000;"></canvas>
 			<div class="slidecontainer">
 				<input type="range" min="1050" max="1500" value="1050" class="slider" id="slider">
 			</div>
 		</section>
+		<section> 
+			<p>Flächenbilanz</p>
+			<p>\[ \int_a^b f(x) d(x) = \left[F(x)\right]_a^b =F(b) -F(a) ~~;~ F'(x) = f(x)  \] </p>
+		</section>
+		<section> 
+			<h2> Wendepunkte </h2>
+			<p>"Hoch-/Tiefpunkte der Ableitung"</p>
+		</section>
+		<section>
+			<ul>
+				<li>Berechnung von Wendepunkten mit der 2. Ableitung</li>
+				<ul>
+				<li>Notwendige Bedingung: \(2. ~Ableitung = 0\)</li>
+				<li>Hinreichende Bedingungen: 3. Ableitung</li>
+			</ul>
+				<li>Beispiel: \(f(x) = \frac{1}{4}x^4 - x^3 + 4x\)</li>
+			<ul>
+				<li>Bestimmung der 1. Ableitung: \(f'(x) =  x^3 - 3x^2 + 4\)</li>
+				<li>Bestimmung der 2. Ableitung: \(f''(x) = 3x^2 - 6x\)</li>
+				<li>Lösen der Gleichung \(f''(x) = 0\): \(x = 0\) oder \(x = 2\)</li>
+				<li>Bestimmung der 2. Ableitung: \(f'''(x) = 6x - 6\)</li>
+				<li>Überprüfung der Hinreichenden Bedingungen:</li>
+			</ul>
+		</section>
+
+		<section>
+
+		</section>
+
 		<section> 
 			<canvas id="plotter" width="900" height="600" style="border:1px solid #000000;"></canvas>
 			<input type="text" name="equation" value="Math.pow(x,2)">
 			<a href="test">link2</a>
 		</section>
 		
-		<section > 
+		<section> 
 			<canvas id="derivative" width="900" height="600" style="border:1px solid #000000;" ></canvas>
 		</section>
 		<section > 

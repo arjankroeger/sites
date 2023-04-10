@@ -6,7 +6,7 @@ let oX = new Array(id.length).fill(450)
 let oY = new Array(id.length).fill(300)
 let rClickX = new Array(id.length)
 let rClickY = new Array(id.length)
-let ScalingFactor = [55,60,55,20,40];
+let ScalingFactor = [55,60,55,20,50];
 let lastDistance = new Array(id.length).fill(0)
 let Origin = Array(id.length).fill([1,1]); 
 let startX = new Array(id.length);
@@ -19,7 +19,7 @@ var sliderIntegralDeltaXSlider = document.getElementById("slider");
 var sliderRotationX = document.getElementById("sliderRotX");
 var sliderRotationY = document.getElementById("sliderRotY");
 var thalesShift = document.getElementById("thalesShift");
-oX[0] = 150; oY[0]=450; 
+oX[0] = 150; oY[0]=400; 
 oX[3] = 450; oY[3]=300; 
 oX[4] = 400; oY[4]=350; 
 let BderivativePoints = [-1,4]
