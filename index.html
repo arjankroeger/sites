@@ -15,6 +15,8 @@
 		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es7"></script>
     <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
 	</head>
 	<body>
 <div class="reveal"> 
@@ -482,17 +484,83 @@
 			<p> Ein Zufallsexperiment mit exakt zwei Ergebnissen, die Wahrscheinlichkeiten sind \( p\) und \( q = (1-p) \)</p>
 			<p>\( P(X=k) = \left(\begin{array}{r} n \\ k\end{array}\right) \cdot p^k \cdot q^{n-k} \)</p>
 		</section>
-		<section> 
-			<canvas id="plotter" width="900" height="600" style="border:1px solid #000000;"></canvas>
-			<input type="text" name="equation" value="Math.pow(x,2)">
-			<a href="test">link2</a>
+		
+		<section>
+			<h1>Geometrie</h1>
 		</section>
+		<section> 
+			<h2>Vektoraddition</h2>
+			<img src="statics/vektorAddition.png" alt="GIF" width="80%">
+			<p>\( \left(\begin{array}{r} x_1 \\ x_2 \\ x_3 \end{array}\right) + \left(\begin{array}{r} y_1 \\ y_2 \\ y_3 \end{array}\right) = \left(\begin{array}{r} x_1 +y_1\\ x_2 +y_2 \\ x_3+y_3 \end{array}\right)\)</p>
+		</section>
+		<section> 
+			<h2> Betrag  und Länge von Vektoren</h2>
+		<p>\(  |\vec{a}|=  \left(\begin{array}{r} a_1 \\ a_2 \\ a_3 \end{array}\right) =\sqrt{a_1~^2+a_2~^2+a_3~^2}\)</p>
+		<p>\(  |\vec{b}|=  \left(\begin{array}{r} b_1 \\ b_2 \end{array}\right) =\sqrt{b_1~^2+b_2~^2}\)</p>
+		</section>
+		<section> 
+			<h2>Skalarprodukt</h2>
+			<img  src = "statics/Skalarprodukt-Winkel-Vektorlänge.png"  width="60%">
+			<p>\( \left(\begin{array}{r} x_1 \\ x_2 \\ x_3 \end{array}\right) \circ \left(\begin{array}{r} y_1 \\ y_2 \\ y_3 \end{array}\right) = x_1 \cdot y_1 + x_2 \cdot y_2 +x_3 \cdot y_3  \)</p>
+		
+		</section>
+		<section> 
+			<h2>Skalarprodukt</h2>
+			<p>\(  cos(\gamma ) = \frac{ \vec{a} \circ \vec{b} }{| \vec{a} | \cdot | \vec{b}| }\)</p>
+			<p>\( \vec{a} \perp \vec{b} \Leftrightarrow  \vec{a} \circ \vec{b} = 0 \)</p>
+		</section>
+		<section> 
+			<h2>  Kreuz-/Vektorprodukt</h2>
+			<p>\( \vec{a} \times \vec{b} = \left(\begin{array}{r} a_1 \\ a_2 \\ a_3 \end{array}\right) \times \left(\begin{array}{r} b_1 \\ b_2 \\ b_3 \end{array}\right) = \left(\begin{array}{r} a_2b_3 -a_3b_2 \\ a_3b_1 -a_1b_3 \\ a_1b_2 -a_2b_1 \end{array}\right) = \vec{c} \) </p>
+			<p>\(   \Rightarrow \vec{c} \perp \vec{a} \wedge \vec{c} \perp \vec{b}\)</p>
+			<img src="statics/RHR.svg" width="50%" >
+		</section>
+		<section> 
+			<h3>  Flächen mit dem Kreuz-/Vektorprodukt berechnen</h3>
+			<img src="statics/Parallelogramm.png" width="40%" >
+			<p>\(  A_\triangle = \frac{1}{2} A_ = \frac{1}{2} \Biggl| \left(\begin{array}{r} a_1 \\ a_2 \\ a_3 \end{array}\right) \times \left(\begin{array}{r} b_1 \\ b_2 \\ b_3 \end{array}\right) \Biggr|   \)</p>
+			
+		</section>
+		<section> 
+			<h2> Kreise und Kugeln im Koordinatensystem </h2>
+			<p>\(Kreis~in~\mathbb{R}^2~mit~Mittelpunkt~M:~  (\vec{X} - \vec{M} ) ^2  = r^2 \) <br>\(\rightarrow r = \sqrt{(x_1-m_1)^2+(x_2-m_2)^2} \)</p>
+			<p>\(Kugel~in~\mathbb{R}^3~mit~Mittelpunkt~M:~  (\vec{X} - \vec{M} ) ^2  = r^2 \) <br>\(\rightarrow r = \sqrt{(x_1-m_1)^2+(x_2-m_2)^2+(x_3-m_3)^2} \)</p>
+		</section>
+		<section> 
+			<h2> Lineare (Un-)Abhängigkeit von Vektoren </h2>
+			<p>Die Vektoren \( \vec{a_1},\vec{a_2},...,\vec{a_n} \) heißen \(\textbf{linear abhängig} \), wenn minestens einer dieser Vektoren als Linearkombination der anderen Vektoren darstellbar ist.</p>
+			<p>Im \( \mathbb{R}^2 \) sind höchsten zwei Vektoren, im \( \mathbb{R}^3 \) sind höchsten drei Vektoren linear unabhängig</p>
+		</section>
+		<section> 
+			<h3> Geraden </h3>
+			<p>Parameterform: \( \vec{X} = \vec{A} + \lambda \cdot \vec{v}~~ ; \vec{v} \neq 0 \)</p>
+			<h3> Gegenseitige Lage der Geraden \( g ~und ~h\) </h3>
+			<p>\( g: \vec{X}= \vec{A} + \lambda \cdot \vec{v};  h: \vec{X}= \vec{B} + \lambda \cdot \vec{u} \)</p>
+			<p>\( g= h \Leftrightarrow \vec{v} = r\cdot\vec{u} \wedge \vec{B} \in g \)</p>
+			<p>\( g \parallel h \Leftrightarrow \vec{v} = r\cdot\vec{u} \wedge \vec{B} \notin g \)</p>
+			<p>Schnittpunkt</p>
+			<p>Windschief</p>
+
+		</section>
+		<section> 
+			<h2> Ebende </h2>
+			<p>Parameterform: \(  \)</p>
+		</section>
+
+
+
 		<section> 
 			<canvas id="integral" width="900" height="600" style="border:1px solid #000000;"></canvas>
 			<div class="slidecontainer">
 				<input type="range" min="1050" max="1500" value="1050" class="slider" id="slider">
 			</div>
 		</section>
+		<section> 
+			<canvas id="plotter" width="900" height="600" style="border:1px solid #000000;"></canvas>
+			<input type="text" name="equation" value="Math.pow(x,2)">
+			<a href="test">link2</a>
+		</section>
+		
 		<section > 
 			<canvas id="derivative" width="900" height="600" style="border:1px solid #000000;" ></canvas>
 		</section>
