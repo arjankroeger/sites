@@ -1,5 +1,5 @@
 let id = ["3DPlane"];
-let func= [[1,1,0,0]];
+let func= [[1,1,1,0]];
 let BoX = new Array(id.length).fill(450)
 let BoY = new Array(id.length).fill(300)
 let oX = new Array(id.length).fill(450)
@@ -26,9 +26,9 @@ function rot(coords){
   coordsr[1] = Math.sin(theta)*Math.sin(phi)*xn+Math.cos(theta)*yn-Math.sin(theta)*Math.cos(phi)*zn;
   coordsr[2] = -Math.cos(theta)*Math.cos(phi)*xn+Math.sin(theta)*yn+Math.cos(theta)*Math.cos(phi)*zn;
   */
-  coordsr[0] = Math.cos(phi) * xn + Math.sin(phi) * Math.sin(theta) * yn + Math.sin(phi) * Math.cos(theta) *zn;
-  coordsr[1] = Math.cos(theta) *yn - Math.sin(theta)*zn;
-  coordsr[2] = 0-Math.sin(phi)*xn + Math.cos(phi) * Math.sin(theta) * yn + Math.cos(phi) *Math.cos(theta) *zn;      
+  coordsr[0] = Math.cos(phi)*Math.cos(theta)*xn -Math.cos(phi)*Math.sin(theta)*yn+Math.sin(phi)*zn;
+  coordsr[1] =Math.sin(theta)*xn + Math.cos(theta)*yn;
+  coordsr[2] = 0-Math.sin(phi)*Math.cos(theta)*xn + Math.cos(phi) * Math.sin(theta) * yn + Math.cos(phi) *zn;      
   
   return coordsr
 }
@@ -75,7 +75,7 @@ function plotter() {
         
         if (D3.includes(id[idx])) {
           theta = Otheta - deltaY / 100;
-          phi = Ophi - deltaX / 100;
+          phi = Ophi + deltaX / 100;
         }
       }
     });
