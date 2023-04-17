@@ -1,9 +1,25 @@
 <!doctype html>
 <html lang="en">
+	<head>
+		<style>
+			polygon {
+			  stroke: black;
+			  stroke-width: 4;
+			  fill: yellow;
+			  rx: 20; /* horizontal corner radius */
+			  ry: 40; /* vertical corner radius */
+			}
+		  </style>
+	</head>
 	<body>
-		<section> 
-			<canvas id="3DPlane" width="1800" height="1200" style="border:1px solid #000000;" ></canvas>
-		</section>
+	  
+		<svg width="100" height="100">
+			<polygon points ="20,20,80,20,80,80"  stroke="black" stroke-width="2" fill="red"  />
+	
+		</svg>
+	  
+			<!--<canvas id="3DPlane" width="1800" height="1200" style="border:1px solid #000000;" ></canvas>
+		</section>-->
         <script src="plotter.js"></script>
     </body>
 </html>
